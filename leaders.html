@@ -28,29 +28,8 @@
 </head>
 <body>
 
-    <!-- Header with Navbar (updated: floating, rounded, partial width) -->
-<header>
-  <!-- Wrapper that constrains width and provides floating effect -->
-  <div class="floating-navbar-wrapper">
-    <nav class="navbar navbar-expand-lg navbar-light floating-navbar">
-      <div class="container-fluid px-3"> <!-- keep container-fluid for collapse behavior -->
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/images/logo.png" height="36" class="me-2" alt="AKUMS Logo" loading="lazy">
-        <span class="navbar-text text-wrap text-dark">Association of Kenyatta University Medical Students</span>
-      </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavFloating" aria-controls="navbarNavFloating" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavFloating">
-          <ul class="navbar-nav ms-auto">
-            <!-- Links will be injected by your JS (renderNavbar) -->
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+<!-- Header with Navbar (updated: floating, rounded, partial width) -->
+<header id="site-header"><!-- navbar will render into this --></header>
 
 <!-- ====== OUR LEADERS SECTION (FULL GRID: cards for all roles) ====== -->
 <section class="leaders-section py-5">
@@ -291,62 +270,11 @@
 </section>
 
 
-   <!-- ====== FOOTER ====== -->
-<footer class="footer-section py-5">
-  <div class="container">
-    <div class="row g-4 fade-zoom">
+<!-- Footer placeholder -->
+<div id="site-footer"></div>
 
-      <!-- About -->
-      <div class="col-md-4">
-        <h5 class="footer-title mb-3">About AKUMS</h5>
-        <p class="small">
-          The Association of Kenyatta University Medical Students (AKUMS) fosters leadership,
-          community service, and academic excellence among future healthcare professionals.
-        </p>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-md-4">
-        <h5 class="footer-title mb-3">Quick Links</h5>
-        <ul class="list-unstyled footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="resources.html">Publications</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li><a href="about_us.html">About Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact & Socials -->
-      <div class="col-md-4">
-        <h5 class="footer-title mb-3">Contact & Socials</h5>
-        <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Kenyatta University, School of Medicine</p>
-        <p class="small mb-1"><i class="bi bi-envelope-fill me-2"></i>info@akums.org</p>
-        <p class="small mb-3"><i class="bi bi-telephone-fill me-2"></i>+254 700 000 000</p>
-
-        <!-- Social Icons -->
-        <div class="social-icons">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-twitter-x"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <hr class="my-4 border-light">
-
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small fade-zoom">
-      <p class="mb-2 mb-md-0">&copy; 2025 Association of Kenyatta University Medical Students (AKUMS). All rights reserved.</p>
-      <p class="mb-0">Created by <a href="https://yourportfolio.com" target="_blank">Your Name</a></p>
-    </div>
-  </div>
-</footer>
-
-<!-- Firebase Home JS (with defer for performance) -->
-  <script type="module" src="assets/js/constitution.js" defer></script>
-  <!-- Local Bootstrap JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
 
 </body>
 </html>
