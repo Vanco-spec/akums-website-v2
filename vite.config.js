@@ -11,7 +11,15 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',  // Main entry point for your website
-        event: './events.html'
+        events: './events.html',
+        publication: './resources.html',
+        alumni: '/alumni.html',
+        aboutus: '/about_us.html',
+        leaders: '/leaders.html',
+        login: '/login.html',
+        signup: '/signup.html',
+        dashboard: '/student-dashboard.html'
+
       },
     },
   },
