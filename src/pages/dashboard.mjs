@@ -1,5 +1,5 @@
 // src/dashboard.js
-import { auth, db } from "../firebase.js";
+import { auth, db } from "../firebase.mjs";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { doc, getDoc, collection, addDoc, serverTimestamp } from "firebase/firestore";
 
