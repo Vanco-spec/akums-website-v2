@@ -1,5 +1,4 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "package.json",
@@ -11,27 +10,82 @@
     }
   ],
   "routes": [
-    { "src": "^/$", "dest": "/index.html" },
-    { "src": "^/events$", "dest": "/events.html" },
-    { "src": "^/resources$", "dest": "/resources.html" },
-    { "src": "^/alumni$", "dest": "/alumni.html" },
-    { "src": "^/about_us$", "dest": "/about_us.html" },
-    { "src": "^/404$", "dest": "/404.html" },
-    { "src": "^/admin-dashboard$", "dest": "/admin-dashboard.html" },
-    { "src": "^/constitution$", "dest": "/constitution.html" },
-    { "src": "^/contact$", "dest": "/contact.html" },
-    { "src": "^/leaders$", "dest": "/leaders.html" },
-    { "src": "^/login$", "dest": "/login.html" },
-    { "src": "^/scorp$", "dest": "/scorp.html" },
-    { "src": "^/signup$", "dest": "/signup.html" },
-    { "src": "^/sponsor-dashboard$", "dest": "/sponsor-dashboard.html" },
-    { "src": "^/student-dashboard$", "dest": "/student-dashboard.html" },
-    { "src": "^/visitor-dashboard$", "dest": "/visitor-dashboard.html" },
-
-    { "src": "^/assets/(.*)$", "dest": "/assets/$1" },
-    { "src": "^/public/(.*)$", "dest": "/public/$1" },
-    { "src": "^/src/(.*)$", "dest": "/src/$1" },
-
-    { "src": "/.*", "dest": "/404.html" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/events.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/resources.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/alumni.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/about_us.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/404.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/admin-dashboard.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/constitution.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/leaders.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/login.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/scorp.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/signup.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/sponsor-dashboard.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/student-dashboard.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/visitor-dashboard.html"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/public/(.*)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/src/(.*)",
+      "dest": "/src/$1"
+    }
+    
   ]
 }
