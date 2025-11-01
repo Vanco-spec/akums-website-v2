@@ -446,7 +446,7 @@ table th {
   position: relative;
   height: 99.5vh; /* nearly full screen */
   min-height: 500px;
-  background: url('../images/20250912_183220.jpg') no-repeat center center/cover;
+  background: url('../assets/images/20250912_183220.jpg') no-repeat center center/cover;
   color: #fff;
   overflow: hidden;
   }
@@ -1652,7 +1652,7 @@ hr {
   height: 90vh;
   background: 
     linear-gradient(rgba(0, 32, 96, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../images/magazine-hero.jpg') center/cover no-repeat;
+    url('../assets/images/placeholder.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1671,7 +1671,7 @@ hr {
   left: -10%;
   width: 120%;
   height: 120%;
-  background: url('../images//magazine-hero.jpg') center/cover no-repeat;
+  background: url('../assets/images/placeholder.png') center/cover no-repeat;
   filter: blur(8px) brightness(0.7);
   z-index: 0;
   animation: floatBg 30s ease-in-out infinite alternate;
@@ -2155,7 +2155,7 @@ hr {
 .join-alumni-section {
   position: relative;
   height: 600px;
-  background: url("../images/placeholder.png") center/cover no-repeat;
+  background: url("../assets/images/placeholder.png") center/cover no-repeat;
   color: #fff;
   display: flex;
   align-items: center;
