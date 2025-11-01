@@ -1,45 +1,49 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'path';
+import path from 'path';
 
 export default defineConfig({
-  root: './', 
-  base: './', // ✅ Works perfectly for Vercel, GitHub Pages, or any static hosting
+  root: './',               // project root
+  base: './',               // use './' for Vercel or root-based hosting
 
   build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
+    outDir: 'dist',         // production build output
+    assetsDir: 'assets',    // static assets folder
     rollupOptions: {
       input: {
-        // ✅ All HTML entry points for multipage setup
-        main: resolve(__dirname, 'index.html'),
-        events: resolve(__dirname, 'events.html'),
-        resources: resolve(__dirname, 'resources.html'),
-        alumni: resolve(__dirname, 'alumni.html'),
-        about_us: resolve(__dirname, 'about_us.html'),
-        constitution: resolve(__dirname, 'constitution.html'),
-        contact: resolve(__dirname, 'contact.html'),
-        leaders: resolve(__dirname, 'leaders.html'),
-        login: resolve(__dirname, 'login.html'),
-        signup: resolve(__dirname, 'signup.html'),
-        scorp: resolve(__dirname, 'scorp.html'),
-        'student-dashboard': resolve(__dirname, 'student-dashboard.html'),
-        'sponsor-dashboard': resolve(__dirname, 'sponsor-dashboard.html'),
-        'visitor-dashboard': resolve(__dirname, 'visitor-dashboard.html'),
-        'admin-dashboard': resolve(__dirname, 'admin-dashboard.html'),
-        '404': resolve(__dirname, '404.html'),
+        main: path.resolve(__dirname, 'index.html'),
+        events: path.resolve(__dirname, 'events.html'),
+        resources: path.resolve(__dirname, 'resources.html'),
+        alumni: path.resolve(__dirname, 'alumni.html'),
+        about_us: path.resolve(__dirname, 'about_us.html'),
+        '404': path.resolve(__dirname, '404.html'),
+        'admin-dashboard': path.resolve(__dirname, 'admin-dashboard.html'),
+        constitution: path.resolve(__dirname, 'constitution.html'),
+        contact: path.resolve(__dirname, 'contact.html'),
+        leaders: path.resolve(__dirname, 'leaders.html'),
+        login: path.resolve(__dirname, 'login.html'),
+        scorp: path.resolve(__dirname, 'scorp.html'),
+        signup: path.resolve(__dirname, 'signup.html'),
+        'sponsor-dashboard': path.resolve(__dirname, 'sponsor-dashboard.html'),
+        'student-dashboard': path.resolve(__dirname, 'student-dashboard.html'),
+        'visitor-dashboard': path.resolve(__dirname, 'visitor-dashboard.html'),
       },
     },
-    emptyOutDir: true,
+    emptyOutDir: true,      // clear dist folder before build
   },
 
   server: {
-    host: true, // allows access from LAN
-    port: 8080,
-    strictPort: true,
+    host: true,             // allow access from other devices in network
+    port: 8080,             // dev server port
+    strictPort: true,       // fail if port is taken
   },
 
   preview: {
-    port: 5000,
+    port: 5000,             // preview production build locally
+  },
+
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // allows import like "@/auth/firebase.js"
+    },
   },
 });
-
