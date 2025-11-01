@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKUMS | Events </title>
+  
+  <!-- SEO & Social -->
+  <link rel="canonical" href="https://yourdomain.com/">
+  <meta property="og:title" content="AKUMS | Association of Kenyatta University Medical Students">
+  <meta property="og:description" content="Empowering medical students with knowledge and leadership.">
+  <meta property="og:image" content="assets/images/logo.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Preload Critical Asset -->
+  <link rel="preload" href="assets/images/logo.png" as="image">
+
+  <!-- Bootstrap & Icons -->
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  
+  
+ <style>
+ .events-section {
+  background: #f8f9fa;
+}
+
+.event-item {
+  transition: all 0.25s ease;
+  border: 1.5px solid #212529 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.event-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.event-title {
+  font-weight: 600;
+  color: #000;
+}
+
+.event-description {
+  color: #333;
+}
+
+.event-requirements {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #555;
+}
+
+.event-requirements li {
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #111;
+}
+
+ </style> 
+</head>
+
+<body data-page="events">
+
+  <a href="#events" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Header with Navbar (updated: floating, rounded, partial width) -->
+<header id="site-header"><!-- navbar will render into this --></header>
+
+
+<!-- ====== EVENTS CAROUSEL ====== -->
+<div id="eventsCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" >
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#eventsCarousel" data-bs-slide-to="4"></button>
+  </div>
+
+  <!-- Carousel Items -->
+  <div class="carousel-inner">
+
+    <!-- Event 1 -->
+    <div class="carousel-item active">
+      <img src="/assets/images/event1.jpg" class="d-block w-100 carousel-img" alt="Event 1">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start">
+        <h2 class="event-title">Medical Research Summit 2025</h2>
+        <p class="event-date">📅 March 10, 2025</p>
+        <p class="event-desc">Join top researchers as they unveil groundbreaking findings in clinical medicine and innovation.</p>
+      </div>
+    </div>
+
+    <!-- Event 2 -->
+    <div class="carousel-item">
+      <img src="/assets/images/event2.jpg" class="d-block w-100 carousel-img" alt="Event 2">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start">
+        <h2 class="event-title">AKUMS Health Outreach</h2>
+        <p class="event-date">📅 April 20, 2025</p>
+        <p class="event-desc">Experience our annual community medical outreach — healthcare, wellness, and service to the people.</p>
+      </div>
+    </div>
+
+    <!-- Event 3 -->
+    <div class="carousel-item">
+      <img src="/assets/images/event3.jpg" class="d-block w-100 carousel-img" alt="Event 3">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start">
+        <h2 class="event-title">Leadership Training Camp</h2>
+        <p class="event-date">📅 May 12–14, 2025</p>
+        <p class="event-desc">Empowering future healthcare leaders through teamwork, ethics, and innovation workshops.</p>
+      </div>
+    </div>
+
+    <!-- Event 4 -->
+    <div class="carousel-item">
+      <img src="/assets/images/20250912_183220.jpg" class="d-block w-100 carousel-img" alt="Event 4">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start">
+        <h2 class="event-title">Mental Health Awareness Week</h2>
+        <p class="event-date">📅 June 2–7, 2025</p>
+        <p class="event-desc">A week of activities and talks highlighting the importance of mental wellbeing for medical students.</p>
+      </div>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="carousel-item">
+      <img src="/assets/images/event2.jpg" class="d-block w-100 carousel-img" alt="Event 5">
+      <div class="carousel-caption d-flex flex-column justify-content-center align-items-start text-start">
+        <h2 class="event-title">Annual AKUMS Gala Night</h2>
+        <p class="event-date">📅 July 30, 2025</p>
+        <p class="event-desc">An elegant evening celebrating achievements, milestones, and unity within the AKUMS family.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<!-- ==============================
+     EVENTS SECTION
+============================== -->
+<section id="events" class="events-section py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Upcoming AKUMS Events</h2>
+
+    <div class="event-list">
+      
+      <!-- Event 1 -->
+      <div class="event-item shadow-sm border border-dark rounded-3 p-4 mb-4 bg-white">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h4 class="event-title mb-0">Fun Run & Walk Day</h4>
+          <span class="badge bg-primary">Sat, Oct 26 2025</span>
+        </div>
+        <p class="text-muted mb-2"><i class="bi bi-geo-alt me-2"></i>KU Campus Grounds</p>
+        <p class="event-description">
+          A 5 km fun run and walk to promote health and unity among medical students.
+        </p>
+        <ul class="event-requirements mb-3">
+          <li>Registered AKUMS member</li>
+          <li>Sports attire required</li>
+          <li>KSh 300 registration (t-shirt & water included)</li>
+        </ul>
+        <a href="signup-event.html" class="btn btn-outline-dark btn-sm">Join This Event</a>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-item shadow-sm border border-dark rounded-3 p-4 mb-4 bg-white">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h4 class="event-title mb-0">Bicycle Ride Day</h4>
+          <span class="badge bg-primary">Sat, Nov 2 2025</span>
+        </div>
+        <p class="text-muted mb-2"><i class="bi bi-geo-alt me-2"></i>KU – Thika Road Loop</p>
+        <p class="event-description">
+          A 20 km scenic ride promoting sustainability, fitness, and student wellness.
+        </p>
+        <ul class="event-requirements mb-3">
+          <li>Bring your own or rent a bicycle</li>
+          <li>Helmet & safety gear mandatory</li>
+          <li>Safety briefing at 7:30 AM</li>
+        </ul>
+        <a href="signup-event.html" class="btn btn-outline-dark btn-sm">Join This Event</a>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-item shadow-sm border border-dark rounded-3 p-4 mb-4 bg-white">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h4 class="event-title mb-0">Ngong Hills Hike & Picnic</h4>
+          <span class="badge bg-primary">Sat, Dec 14 2025</span>
+        </div>
+        <p class="text-muted mb-2"><i class="bi bi-geo-alt me-2"></i>Ngong Hills, Kajiado</p>
+        <p class="event-description">
+          Refresh your mind with a hike followed by a picnic — unwind, connect, and enjoy nature.
+        </p>
+        <ul class="event-requirements mb-3">
+          <li>Comfortable hiking shoes</li>
+          <li>Carry lunch & water</li>
+          <li>Transport provided from KU</li>
+        </ul>
+        <a href="signup-event.html" class="btn btn-outline-dark btn-sm">Join This Event</a>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event-item shadow-sm border border-dark rounded-3 p-4 mb-4 bg-white">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h4 class="event-title mb-0">AKUMS Fun Day</h4>
+          <span class="badge bg-primary">Sun, Jan 10 2026</span>
+        </div>
+        <p class="text-muted mb-2"><i class="bi bi-geo-alt me-2"></i>KU Sports Grounds</p>
+        <p class="event-description">
+          Games, food stalls, and good vibes! A day of bonding across KU medical departments.
+        </p>
+        <ul class="event-requirements mb-3">
+          <li>Open to all AKUMS members</li>
+          <li>Bring a valid student ID</li>
+          <li>Volunteer opportunities available</li>
+        </ul>
+        <a href="signup-event.html" class="btn btn-outline-dark btn-sm">Join This Event</a>
+      </div>
+
+      <!-- Event 5 -->
+      <div class="event-item shadow-sm border border-dark rounded-3 p-4 mb-4 bg-white">
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <h4 class="event-title mb-0">Sunrise Wellness Ride</h4>
+          <span class="badge bg-primary">Sat, Feb 7 2026</span>
+        </div>
+        <p class="text-muted mb-2"><i class="bi bi-geo-alt me-2"></i>KU Main Gate – Ruiru Route</p>
+        <p class="event-description">
+          An early-morning ride to refresh the mind — slow pace, great company, and breakfast after.
+        </p>
+        <ul class="event-requirements mb-3">
+          <li>Light-reflective attire recommended</li>
+          <li>Small first-aid kit & water</li>
+          <li>KSh 150 (breakfast included)</li>
+        </ul>
+        <a href="signup-event.html" class="btn btn-outline-dark btn-sm">Join This Event</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer placeholder -->
+<div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | AKUMS</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <h1>Welcome, Admin</h1>
+
+  <div class="dashboard-container">
+    <div class="dashboard-section">
+      <h2>Profile</h2>
+      <p>Full Name: <span id="admin-name"></span></p>
+      <p>Email: <span id="admin-email"></span></p>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>All Users</h2>
+      <ul id="admin-users">
+        <li>Loading users...</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Event Applications</h2>
+      <ul id="admin-applications">
+        <li>Loading event applications...</li>
+      </ul>
+    </div>
+
+    <div class="dashboard-section">
+      <h2>Manage Events</h2>
+      <ul id="admin-events">
+        <li>Loading events...</li>
+      </ul>
+    </div>
+  </div>
+
+  <script type="module" src="assets/js/admin-dashboard.js"></script>
+</body>
+</html>
