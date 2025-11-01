@@ -11,6 +11,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',  // Main entry point for your website
+        event: './events.html'
       },
     },
   },
