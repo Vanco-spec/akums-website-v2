@@ -1,5 +1,5 @@
 // src/components/navbar.js
-import { auth } from "../firebase.js";
+import { auth } from "../firebase.mjs";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
 // ====== NAVBAR HTML TEMPLATE ======

@@ -1,5 +1,5 @@
 // src/signup.js
-import { auth, db } from "../firebase";
+import { auth, db } from "../firebase.mjs";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
