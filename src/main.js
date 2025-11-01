@@ -1,4 +1,24 @@
 // src/main.js
+import './auth/auth.js'
+import './auth/login.js'
+import './components/footer.js'
+import './components/navbar.js'
+import './firebase.js'
+import './pages/about_us.js'
+import './pages/admin-dashboard.js'
+import './pages/admin.js'
+import './pages/alumni.js'
+import './pages/constitution.js'
+import './pages/dashboard.js'
+import './pages/events.js'
+import './pages/home.js'
+import './pages/leaders.js'
+import './pages/resources.js'
+import './pages/scorp.js'
+import './pages/sponsor-dashboard.js'
+import './pages/student-dashboard.js'
+import './pages/subscription.js'
+import './pages/visitor-dashboard.js'
 
 // Import global CSS and Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
