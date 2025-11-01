@@ -1,9 +1,27 @@
 import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  root: './',         // project root
+  // Base path — use '/akums-website-v2/' for GitHub Pages or './' for local hosting
+  base: '/akums-website-v2/',
+
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+    emptyOutDir: true,
+  },
+
   server: {
-    port: 5173,       // optional, default Vite port
+    host: true,
+    port: 8080,
+    strictPort: true,
+  },
+
+  preview: {
+    port: 5000,
   },
 });
