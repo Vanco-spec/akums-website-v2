@@ -1,10 +1,8 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-
-  root: './', // project root
-  // Base path — use '/akums-website-v2/' for GitHub Pages or './' for local hosting
-  base: '/akums-website-v2/',
+  root: './', 
+  base: './',  // ✅ Correct for Vercel or any root-based hosting
 
   build: {
     outDir: 'dist',
