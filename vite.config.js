@@ -19,8 +19,6 @@ export default defineConfig({
         login: '/login.html',
         signup: '/signup.html',
         dashboard: '/student-dashboard.html',
-        styles: '/styles.css'
-
       },
     },
   },
