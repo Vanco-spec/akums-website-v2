@@ -7,7 +7,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 // Import shared components
-import { initNavbar } from './components/navbar.mjs';
+import { initNavbar } from './components/navbar.js';
 import { initFooter } from './components/footer.mjs';
 
 // Initialize components after DOM is ready
