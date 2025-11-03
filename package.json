@@ -6,20 +6,20 @@
   "type": "module",
   "author": "Vincent Murithi",
   "license": "ISC",
-  "keywords": ["AKUMS"],
-
+  "keywords": [
+    "AKUMS"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "start": "http-server -p 8080"
   },
-
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "bootstrap": "^5.3.8",
     "firebase": "^12.4.0"
   },
-
   "devDependencies": {
     "vite": "^7.1.7"
   }

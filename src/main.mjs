@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
 import './styles.css';
 
+
 // Import shared components
 import { initNavbar } from './components/navbar.mjs';
 import { initFooter } from './components/footer.mjs';
