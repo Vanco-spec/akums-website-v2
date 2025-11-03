@@ -94,14 +94,15 @@ class SimpleCarousel {
     this.track.setPointerCapture(e.pointerId);
   }
 
-  _onPointerMove(e){
-    if (!this.isPointerDown) return;
-    const dx = e.clientX - this.startX;
-    const width = this.root.offsetWidth;
-    this.currentTranslate = -this.current*width + dx;
-    this.track.style.transform = `translateX(${this.currentTranslate}px)`;
-    this.isDragging = true;
-  }
+ _onPointerMove(e) {
+  if (!this.isPointerDown) return;
+  e.preventDefault(); // ✅ stops page scrolling while swiping
+  const dx = e.clientX - this.startX;
+  const width = this.root.offsetWidth;
+  this.currentTranslate = -this.current * width + dx;
+  this.track.style.transform = `translateX(${this.currentTranslate}px)`;
+  this.isDragging = true;
+}
 
   _onPointerUp(e){
     if (!this.isPointerDown) return;
