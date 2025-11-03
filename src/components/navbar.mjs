@@ -8,7 +8,7 @@ const NAV_HTML = (isLoggedIn) => `
     <nav class="navbar navbar-expand-lg navbar-light floating-navbar">
       <div class="container-fluid px-3">
         <a class="navbar-brand d-flex align-items-center" href="/index.html">
-          <img src="./assets/images/logo.png" height="36" class="me-2" alt="AKUMS Logo" loading="lazy">
+          <img src="../assets/images/logo.png" height="36" class="me-2" alt="AKUMS Logo" loading="lazy">
           <span class="navbar-text text-wrap text-dark">
             Association of Kenyatta University Medical Students
           </span>
