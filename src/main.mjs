@@ -2,7 +2,9 @@
 // Import global CSS and Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
-import './styles.css';
+// main.mjs
+import '../assets/css/style.css';
+
 
 
 // Import shared components
