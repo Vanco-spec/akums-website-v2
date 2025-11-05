@@ -1955,6 +1955,7 @@ hr {
   animation: pulse 1.5s infinite;
 }
 
+
 /* Pulsing animation for active indicator */
 @keyframes pulse {
   0% { transform: scale(1); opacity: 1; }

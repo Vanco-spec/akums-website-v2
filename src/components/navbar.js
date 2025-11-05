@@ -91,9 +91,13 @@ function setActiveNavLink() {
   const links = document.querySelectorAll(".floating-navbar .nav-link");
   const currentPath = window.location.pathname;
   links.forEach(link => {
-    if (link.getAttribute("href") === currentPath) {
-      link.classList.add("active");
-    } else {
+    const href = link.getAttribute("href").replace(/^\/|\/$/g, "");
+    const path = currentPath.replace(/^\/|\/$/g, "");
+    if (href === path || (href === "index.html" && path === "")) {
+    link.classList.add("active");
+  }
+ else 
+  {
       link.classList.remove("active");
     }
   });
