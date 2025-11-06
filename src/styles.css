@@ -566,8 +566,12 @@ nav .nav-link.active::after {
 }
 
 .floating-navbar .nav-link:hover {
-  color: #007bff !important;
+  background-color: #007bff;
+  color: #fff !important;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 /* Slightly stronger active link */
 .floating-navbar .nav-link.active {
@@ -575,9 +579,12 @@ nav .nav-link.active::after {
   font-weight: 600;
 }
 
-.floating-navbar .nav-link.active::after {
-  width: 100%;
+.floating-navbar .nav-link.active:hover {
+  background-color: #007bff; /* darker blue shade on hover */
+  color: #fff !important;
+  border-radius: 8px;
 }
+
 
 /* Smaller screens tweaks */
 @media (max-width: 767px) {
@@ -2881,7 +2888,7 @@ hr {
 /* ====== ALUMNI ACHIEVEMENTS SECTION ====== */
 .alumni-achievements {
   margin-top: 100px;
-  background: radial-gradient(circle, rgba(173, 216, 230, 0.25), transparent 70%);
+  background: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -2893,7 +2900,7 @@ hr {
   right: -40%;
   width: 80%;
   height: 80%;
-  background: radial-gradient(circle, rgba(173, 216, 230, 0.25), transparent 70%);
+  background:  #fff;
   z-index: 0;
 }
 
@@ -2908,6 +2915,7 @@ hr {
   max-width: 750px;
   margin: 0 auto 3rem;
   color: #5f6b6b;
+
 }
 
 .achievement-box {
@@ -3318,22 +3326,20 @@ hr {
   animation: fadeInUp 1.2s ease;
 }
 
-/* CTA Button */
-.btn-cta {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.65rem 1.2rem;
-  border-radius: var(--radius);
-  font-weight: 600;
-  background: linear-gradient(90deg, var(--primary), #0a4a4a);
-  color: var(--white);
-  box-shadow: var(--shadow-lg);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+/* Shorter, taller button with smooth edges */
+.custom-hero-btn {
+  color: #000;
+  padding: 0.6rem 1.3rem;   /* reduced width, increased height */
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
-.btn-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(10,15,20,0.12);
+.custom-hero-btn:hover {
+  transform: translateY(-2px);
+  background-color: #0a4f4f;
+  box-shadow: 0 4px 12px rgba(15, 91, 91, 0.3);
 }
 
 /* Animations */
@@ -3356,6 +3362,8 @@ hr {
 
 /* ====== WHO WE ARE SECTION ====== */
 .who-we-are {
+  margin-top: 40px;
+  margin-bottom: 40px;
   background-color: var(--bg, #fff);
   padding: 4rem 0;
   font-size: 1.05rem;
@@ -3448,6 +3456,78 @@ hr {
   }
 }
 
+/* ===== AKUMS Blood Drive & Tournament ===== */
+.akums-initiatives{
+  margin-top: 30px;
+  background: linear-gradient(135deg, #0F5B5B, #20A4A4, #524cf2);
+
+}
+
+.akums-initiatives .card {
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.akums-initiatives .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.akums-initiatives .card-title {
+  font-size: 1.25rem;
+}
+.akums-initiatives .partner-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.akums-initiatives .partner-logo:hover {
+  opacity: 1;
+}
+.akums-initiatives img.rounded-3 {
+  object-fit: cover;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .akums-initiatives .card-title {
+    font-size: 1.15rem;
+  }
+  .akums-initiatives img.rounded-3 {
+    height: 160px;
+  }
+}
+
+/* ===== AKUMS Initiatives (Extended) ===== */
+.akums-initiatives .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.akums-initiatives .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.akums-initiatives .card-title {
+  font-size: 1.1rem;
+}
+.akums-initiatives .partner-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+.akums-initiatives .partner-logo:hover {
+  opacity: 1;
+}
+.akums-initiatives img.rounded-3 {
+  object-fit: cover;
+  height: 200px;
+}
+@media (max-width: 768px) {
+  .akums-initiatives img.rounded-3 {
+    height: 160px;
+  }
+}
+
 /* ====== ABOUT NAVIGATION SECTION ====== */
 .about-navigation {
   background: #fff;
@@ -3458,6 +3538,7 @@ hr {
 .about-navigation .section-title {
   color: var(--primary, #0F5B5B);
   font-weight: 700;
+  padding-bottom: 50px;
 }
 
 .about-navigation .nav-card {
@@ -3465,7 +3546,8 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: linear-gradient(135deg, #FFF8E7, #F5E8C7);
+
   border-radius: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   text-decoration: none;
@@ -3529,6 +3611,7 @@ hr {
 }
 
 .mission-vision .intro-text {
+  padding-bottom: 50px;
   color: #555;
   max-width: 750px;
   margin: 0 auto;
@@ -3628,6 +3711,7 @@ hr {
 }
 
 .what-we-do .intro-text {
+  padding-bottom: 50px;
   color: #555;
   max-width: 750px;
   margin: 0 auto 2rem;
@@ -3955,17 +4039,19 @@ hr {
 
 /* ====== CONNECT WITH AKUMS SECTION ====== */
 .connect-section {
+  
   margin-top: 100px;
-  background: #fff;
+  background: linear-gradient(135deg, #0F5B5B, #3CAEA3, #4FB0C6);
   color: #000;
   padding: 6rem 2rem; /* fixed padding */
   text-align: center;
 }
 
 .connect-section .section-title {
+  margin-top: 40px;
   font-size: 2.4rem;
   font-weight: 700;
-  color: #0F5B5B; /* accent color */
+  color: #000; /* accent color */
   position: relative;
   margin-bottom: 1rem;
 }
@@ -3981,7 +4067,9 @@ hr {
 }
 
 .contact-card {
-  background: #fff;
+  margin-top: 30px;
+  background: linear-gradient(135deg, #FFF8E7, #F7E3B0);
+
   border: none;
   border-radius: 1rem;
   padding: 2rem;
@@ -4006,7 +4094,7 @@ hr {
 }
 
 .social-links a {
-  color: #0F5B5B;
+  color: #000;
   font-size: 1.8rem;
   margin: 0 0.5rem;
   transition: color 0.3s ease, transform 0.3s ease;

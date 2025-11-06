@@ -54,6 +54,10 @@ export function initFooter() {
          <p class="mb-0">Created by <a href="https://yourportfolio.com" target="_blank">BATMAN</a></p>
        </div>
      </div>
+
+     <script defer src="https://speed-insights.vercel.app/script.js"></script>
+
+
    </footer>
   `;
 

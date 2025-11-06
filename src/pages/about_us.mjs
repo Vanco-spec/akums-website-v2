@@ -47,3 +47,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   observer.observe(impactSection);
 });
+
+ (function(){
+    // animate numeric counts (very small / graceful fallback)
+    document.querySelectorAll('.count').forEach(el=>{
+      const start = 0;
+      const end = parseInt(el.textContent.replace(/\D/g,'')) || 1200;
+      let cur = start;
+      const dur = 900;
+      const step = Math.max(1, Math.round(end / (dur/16)));
+      const t = setInterval(()=>{
+        cur += step;
+        if(cur >= end){ el.textContent = end.toLocaleString(); clearInterval(t); }
+        else el.textContent = cur.toLocaleString();
+      }, 16);
+    });
+    // optional: open registration links in new tab for safety
+    document.querySelectorAll('.card-actions a').forEach(a=>{
+      if(a.href && a.getAttribute('target')===null) a.setAttribute('target','_blank');
+    });
+  })();
