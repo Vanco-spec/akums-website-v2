@@ -2,11 +2,20 @@
 // Import global CSS and Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
-
+import 'animate.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+ 
 
 // Import shared components
 import { initNavbar } from './components/navbar.js';
 import { initFooter } from './components/footer.mjs';
+
+// Initialize AOS
+AOS.init({
+  duration: 1000,  // animation duration in ms
+  once: true,      // whether animation should happen only once
+});
 
 // Initialize components after DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
