@@ -1,47 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carousels = document.querySelectorAll(".event-slideshow");
+const slider = document.querySelector('.slider');
 
-  carousels.forEach((carousel) => {
-    const slides = carousel.querySelectorAll(".slide");
-    const indicators = carousel.querySelectorAll(".indicator");
-    const prevBtn = carousel.querySelector(".prev");
-    const nextBtn = carousel.querySelector(".next");
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
 
-    let current = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        indicators[i].classList.toggle("active", i === index);
-      });
-      current = index;
-    }
-
-    function nextSlide() {
-      const next = (current + 1) % slides.length;
-      showSlide(next);
-    }
-
-    function prevSlide() {
-      const prev = (current - 1 + slides.length) % slides.length;
-      showSlide(prev);
-    }
-
-    // Event listeners
-    nextBtn.addEventListener("click", nextSlide);
-    prevBtn.addEventListener("click", prevSlide);
-
-    indicators.forEach((btn, i) => {
-      btn.addEventListener("click", () => showSlide(i));
-    });
-
-    // Optional: auto-advance every 5s
-    let autoPlay = setInterval(nextSlide, 5000);
-
-    // Pause autoplay on hover
-    carousel.addEventListener("mouseenter", () => clearInterval(autoPlay));
-    carousel.addEventListener("mouseleave", () => {
-      autoPlay = setInterval(nextSlide, 5000);
-    });
-  });
-});
+document.addEventListener('click',activate,false);
