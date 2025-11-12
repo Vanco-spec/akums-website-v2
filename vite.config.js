@@ -13,6 +13,9 @@ export default defineConfig({
         main: './index.html',  // Main entry point for your website
         events: './events.html',
         publication: './resources.html',
+        submission: './submission-magazine.html',
+        issue: './issue-magazine.html',
+        team: './team-magazine.html',
         alumni: '/alumni.html',
         aboutus: '/about_us.html',
         leaders: '/leaders.html',
