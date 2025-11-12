@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "cleanUrls": true,
   "builds": [
     {
       "src": "package.json",
@@ -23,7 +24,7 @@
 
     { 
       "src": "/", 
-    "dest": "/resources.html"
+    "dest": "/about-magazine.html"
    },
 
     { 
@@ -49,11 +50,6 @@
     { 
       "src": "/", 
     "dest": "/about_us.html"
-   },
-
-    { 
-      "src": "/", 
-    "dest": "/404.html"
    },
 
     { 
@@ -118,6 +114,12 @@
     "dest": "/src/$1" },
 
     { "src": "/.*", 
-    "dest": "/404.html" }
+    "dest": "/404.html" },
+
+    { 
+      "src": "/", 
+    "dest": "/404.html"
+   }
+   
   ]
 }

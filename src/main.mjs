@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     import('./pages/home.mjs').then(m => m.init?.());
   } else if (path.endsWith('/events.html')) {
     import('./pages/events.mjs').then(m => m.init?.());
-  } else if (path.endsWith('/resources.html')) {
-    import('./pages/resources.mjs').then(m => m.init?.());
+  } else if (path.endsWith('/about-magazine.html')) {
+    import('./pages/about-magazine.mjs').then(m => m.init?.());
   } else if (path.endsWith('/submission-magazine.html')) {
     import('./pages/submission-magazine.mjs').then(m => m.init?.());
       } else if (path.endsWith('/issue-magazine.html')) {
