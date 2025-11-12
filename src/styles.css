@@ -2902,6 +2902,225 @@ h1.text-center.mb-5::after {
   }
 }
 
+/* ================= MAGAZINE HERO SECTION ================= */
+.magazine-hero {
+  position: relative;
+  margin-bottom: 40px;
+  background: linear-gradient(to bottom right, #0a2a6c, #09237a, #020b3a);
+  color: #fff;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hero-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+/* LEFT SIDE */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  color: #c7d7ff;
+  font-size: 1.2rem;
+}
+
+.hero-article h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-article p {
+  color: #d5e2ff;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary,
+.btn-outline {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #0a2a6c;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #f3f6ff;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* RIGHT IMAGE */
+.hero-image-wrapper {
+  position: relative;
+  
+}
+
+.hero-image {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  transform: rotate(2deg);
+  transition: transform 0.4s ease;
+}
+
+.hero-image:hover {
+  transform: rotate(0);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Floating info card */
+.hero-featured {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: #fff;
+  color: #0a2a6c;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 220px;
+}
+
+.featured-label {
+  font-size: 0.85rem;
+  color: #0a47b0;
+  margin-bottom: 0.3rem;
+}
+
+/* ====== ABOUT MAGAZINE SECTION ====== */
+.about-magazine-section {
+  background-color: #ffffff;
+  position: relative;
+}
+
+.about-magazine-section h2 {
+  font-size: 2rem;
+  color: #0a0a0a;
+}
+
+.about-magazine-section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-magazine-section .btn-primary {
+  background-color: #0056b3;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.about-magazine-section .btn-primary:hover {
+  background-color: #004599;
+  transform: translateY(-2px);
+}
+
+.about-magazine-section .image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.about-magazine-section .image-glow {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  background: radial-gradient(circle at center, rgba(0, 123, 255, 0.15), transparent 70%);
+  z-index: -1;
+}
+
+.about-magazine-section ul li {
+  color: #333;
+  font-size: 1rem;
+}
+
+.about-magazine-section ul li::before {
+  content: "•";
+  color: #007bff;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+
 /* ====== CREATIVE BOARD SECTION ====== */
 .creative-board-section {
   margin-top: 100px;

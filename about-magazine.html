@@ -36,37 +36,48 @@
 <!-- Header with Navbar (updated: floating, rounded, partial width) -->
 <header id="site-header"><!-- navbar will render into this --></header>
 
-<!-- ====== HERO SECTION ====== -->
-<section class="publication-hero d-flex align-items-center text-center text-white">
-  <div class="container">
-    <h1
-      class="display-5 fw-bold mb-3 animate__animated animate__fadeInUp"
-      data-aos="fade-up"
-      data-aos-delay="100"
-      data-aos-duration="900"
-      aria-hidden="false"
-    >
-      AKUMS Medical Magazine
-    </h1>
 
-    <p
-      class="lead mb-4 animate__animated animate__fadeInUp"
-      data-aos="fade-up"
-      data-aos-delay="250"
-      data-aos-duration="900"
-    >
-      Showcasing the creativity, research, and voices of tomorrow’s medical leaders.
-    </p>
+<section class="magazine-hero">
+  <div class="hero-overlay"></div>
 
-    <a
-      href="#magazine"
-      class="btn btn-light btn-lg px-4 hero-cta animate__animated"
-      data-aos="zoom-in"
-      data-aos-delay="500"
-      role="button"
-    >
-      Explore Issues
-    </a>
+  <div class="hero-container">
+    <div class="hero-grid">
+      <!-- LEFT CONTENT -->
+      <div class="hero-text">
+        <span class="badge">Current Issue</span>
+
+        <h1 class="hero-title">Medical Journal</h1>
+        <p class="hero-subtitle">Volume 45, Issue 11 • November 2025</p>
+
+        <div class="hero-article">
+          <h2>Advances in Immunotherapy: New Frontiers in Cancer Treatment</h2>
+          <p>
+            This month's featured article explores groundbreaking developments in immunotherapy and their
+            implications for personalized cancer treatment protocols.
+          </p>
+        </div>
+
+        <div class="hero-buttons">
+          <button class="btn-primary" href="/issue-magazine.html">Read Current Issue</button>
+          <button class="btn-outline">Subscribe Now</button>
+        </div>
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1631543722888-01f8a17ebf3f?auto=format&fit=crop&w=1080&q=80"
+            alt="Current Issue Cover"
+          />
+        </div>
+
+        <div class="hero-featured">
+          <p class="featured-label">Featured Article</p>
+          <p>Dr. Sarah Mitchell et al.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -74,7 +85,7 @@
 <section class="about-magazine-section py-5" id="about-magazine">
   <div class="container">
     <div class="row align-items-center g-5">
-
+      
       <!-- Text Column -->
       <div class="col-md-6" data-aos="fade-right" data-aos-duration="900">
         <h2 class="fw-bold mb-3 animate__animated animate__fadeInUp">
@@ -82,11 +93,12 @@
         </h2>
         <p class="animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="200">
           The AKUMS Medical Magazine is the official publication of the Association of Kenyatta University Medical Students.
-          It celebrates the intellectual, artistic, and social spirit of KU medical scholars through research articles, creative writing, interviews, and visual art.
+          It celebrates the intellectual, artistic, and social spirit of KU medical scholars through research articles,
+          creative writing, interviews, and visual art.
         </p>
         <p class="animate__animated animate__fadeInUp" data-aos="fade-up" data-aos-delay="350">
-          Each issue highlights current trends in medicine, healthcare innovations, student experiences, and community impact stories.
-          It’s more than a magazine — it’s our voice, our legacy, and our contribution to the medical world.
+          Each issue highlights current trends in medicine, healthcare innovations, student experiences, and community
+          impact stories. It’s more than a magazine — it’s our voice, our legacy, and our contribution to the medical world.
         </p>
         <a href="#magazine"
            class="btn btn-primary mt-3 animate__animated animate__fadeInUp"
@@ -108,8 +120,43 @@
       </div>
 
     </div>
+
+    <!-- ====== MISSION + ETHICS SECTION ====== -->
+    <div class="row mt-5 gy-4">
+      <div class="col-lg-6">
+        <h3 class="fw-semibold mb-3">Our Mission</h3>
+        <p class="text-muted">
+          The AKUMS Medical Magazine is dedicated to publishing high-quality, peer-reviewed research and creative work
+          that advances the understanding and practice of medicine. We strive to provide a platform for discoveries,
+          innovative ideas, and reflective stories that shape the future of healthcare.
+        </p>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li class="mb-2">✔ Rigorous peer review process</li>
+          <li class="mb-2">✔ Indexed and accessible online</li>
+          <li class="mb-2">✔ Open access for broader visibility</li>
+          <li class="mb-2">✔ Student-led editorial and review board</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6">
+        <h3 class="fw-semibold mb-3">Editorial Leadership & Ethics</h3>
+        <p class="text-muted">
+          Our editorial team upholds the highest ethical standards in publishing, following guidelines set by the
+          International Committee of Medical Journal Editors (ICMJE) and the Committee on Publication Ethics (COPE).
+        </p>
+        <div class="bg-light rounded p-4 mt-3">
+          <h6 class="fw-semibold mb-2">Editorial Leadership</h6>
+          <p class="mb-1"><strong>Editor-in-Chief:</strong> Dr. Robert Anderson, MD, PhD</p>
+          <p class="text-muted small">Johns Hopkins University</p>
+          <p class="mb-1"><strong>Deputy Editor:</strong> Dr. Jennifer Liu, MD</p>
+          <p class="text-muted small">Mayo Clinic</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
 
 <!-- Footer placeholder -->
 <div id="site-footer"></div>
