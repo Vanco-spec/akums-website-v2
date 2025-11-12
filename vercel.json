@@ -28,6 +28,21 @@
 
     { 
       "src": "/", 
+    "dest": "/submission-magazine.html"
+   },
+
+    { 
+      "src": "/", 
+    "dest": "/issue-magazine.html"
+   },
+
+       { 
+      "src": "/", 
+    "dest": "/team-magazine.html"
+   },
+
+    { 
+      "src": "/", 
     "dest": "/alumni.html"
    },
 

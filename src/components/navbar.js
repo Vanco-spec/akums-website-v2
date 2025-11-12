@@ -22,7 +22,17 @@ const NAV_HTML = (isLoggedIn) => `
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="/events.html">Events</a></li>
-            <li class="nav-item"><a class="nav-link" href="/resources.html">Publications</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="publicationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Magazine
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="publicationsDropdown">
+                <li><a class="dropdown-item" href="/resources.html">About</a></li>
+                <li><a class="dropdown-item" href="/submission-magazine.html">Submission</a></li>
+                <li><a class="dropdown-item" href="/issue-magazine.html">Issues</a></li>
+                <li><a class="dropdown-item" href="/team-magazine.html">Team</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="/alumni.html">Alumni</a></li>
             <li class="nav-item"><a class="nav-link" href="/about_us.html">About Us</a></li>
             ${
@@ -174,3 +184,68 @@ function attachDynamicLinks() {
     });
   }
 }
+
+// Smooth dropdown hide animation
+document.addEventListener("hide.bs.dropdown", (e) => {
+  const menu = e.target.querySelector(".dropdown-menu");
+  if (menu) {
+    e.preventDefault(); // stop Bootstrap from closing instantly
+    menu.classList.remove("show");
+    menu.classList.add("hide");
+    setTimeout(() => {
+      menu.classList.remove("hide");
+      e.target.classList.remove("show");
+    }, 620); // match animation duration
+  }
+});
+
+const dropdownItems = document.querySelectorAll('.floating-navbar .dropdown-item');
+
+dropdownItems.forEach(item => {
+  item.addEventListener('click', () => {
+    dropdownItems.forEach(i => i.classList.remove('active')); // remove active from all
+    item.classList.add('active'); // add to clicked
+  });
+});
+
+
+const dropdowns = document.querySelectorAll('.floating-navbar .nav-item.dropdown');
+
+dropdowns.forEach(drop => {
+  const link = drop.querySelector('.nav-link');
+  const menu = drop.querySelector('.dropdown-menu');
+
+  // Track toggle state
+  let clicked = false;
+
+  // Click toggles the dropdown manually
+  link.addEventListener('click', e => {
+    e.preventDefault(); // optional: prevent default link jump
+    clicked = !clicked;
+    if (clicked) {
+      menu.classList.add('show');
+      menu.style.opacity = 1;
+      menu.style.visibility = 'visible';
+    } else {
+      menu.classList.remove('show');
+      menu.style.opacity = 0;
+      menu.style.visibility = 'hidden';
+    }
+  });
+
+  // Hover also shows the dropdown
+  drop.addEventListener('mouseenter', () => {
+    menu.classList.add('show');
+    menu.style.opacity = 1;
+    menu.style.visibility = 'visible';
+  });
+
+  // Only hide on mouseleave if not clicked
+  drop.addEventListener('mouseleave', () => {
+    if (!clicked) {
+      menu.classList.remove('show');
+      menu.style.opacity = 0;
+      menu.style.visibility = 'hidden';
+    }
+  });
+});
