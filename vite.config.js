@@ -12,7 +12,7 @@ export default defineConfig({
       input: {
         main: './index.html',  // Main entry point for your website
         events: './events.html',
-        publication: './about-magazine.html',
+        publication: './resource.html',
         submission: './submission-magazine.html',
         issue: './issue-magazine.html',
         team: './team-magazine.html',
