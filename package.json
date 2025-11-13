@@ -24,6 +24,7 @@
     "firebase": "^12.4.0"
   },
   "devDependencies": {
+    "@vercel/static-build": "^2.8.6",
     "vite": "^7.1.7"
   }
 }
