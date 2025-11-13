@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     import('./pages/about-magazine.mjs').then(m => m.init?.());
   } else if (path.endsWith('/submission-magazine.html')) {
     import('./pages/submission-magazine.mjs').then(m => m.init?.());
-      } else if (path.endsWith('/issue-magazine.html')) {
+  } else if (path.endsWith('/issue-magazine.html')) {
     import('./pages/issue-magazine.mjs').then(m => m.init?.());
-      } else if (path.endsWith('/team-magazine.html')) {
+  ;} else if (path.endsWith('/team-magazine.html')) {
     import('./pages/team-magazine.mjs').then(m => m.init?.());
   } else if (path.endsWith('/alumni.html')) {
     import('./pages/alumni.mjs').then(m => m.init?.());
