@@ -27,7 +27,7 @@ const NAV_HTML = (isLoggedIn) => `
                 Magazine
               </a>
               <ul class="dropdown-menu" aria-labelledby="publicationsDropdown">
-                <li><a class="dropdown-item" href="/about-magazine">About</a></li>
+                <li><a class="dropdown-item" href="/about-magazine.html">About</a></li>
                 <li><a class="dropdown-item" href="/submission-magazine.html">Submission</a></li>
                 <li><a class="dropdown-item" href="/issue-magazine.html">Issues</a></li>
                 <li><a class="dropdown-item" href="/team-magazine.html">Team</a></li>
