@@ -55,7 +55,7 @@ html, body {
         <p class='description'> Lorem ipsum, dolor sit amet consectetur
         adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
         praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
+        
       </div>
     </li>
     <li class='item' style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
@@ -64,34 +64,34 @@ html, body {
         <p class='description'> Lorem ipsum, dolor sit amet consectetur
         adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
         praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
+       
       </div>
     </li>
-    <li class='item' style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')">
+    <li class='item' style="background-image: url('../assets/images/eventsample1.jpg')">
       <div class='content'>
         <h2 class='title'>"The Gate Keeper"</h2>
         <p class='description'> Lorem ipsum, dolor sit amet consectetur
         adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
         praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
+        
       </div>
     </li>
-    <li class='item' style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')">
+    <li class='item' style="background-image: url('../assets/images/eventsample2.jpg')">
       <div class='content'>
         <h2 class='title'>"Last Trace Of Us"</h2>
         <p class='description'>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
         </p>
-        <button>Read More</button>
+        
       </div>
     </li>
-    <li class='item' style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')">
+    <li class='item' style="background-image: url('../assets/images/eventsample3.jpg')">
       <div class='content'>
         <h2 class='title'>"Urban Decay"</h2>
         <p class='description'>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
         </p>
-        <button>Read More</button>
+        
       </div>
     </li>
     <li class='item' style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')">
@@ -100,13 +100,13 @@ html, body {
         <p class='description'> Lorem ipsum, dolor sit amet consectetur
         adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
         praesentium nisi. Id laboriosam ipsam enim.  </p>
-        <button>Read More</button>
+        
       </div>
     </li>
   </ul>
 <nav class="nav">
-  <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
-  <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
+  <span class="btn prev">&lt;</span>
+  <span class="btn next">&gt;</span>
 </nav>
 
 </section>
@@ -115,65 +115,46 @@ html, body {
 <div class="container">
     <h1 class=" text-center mb-5">UPCOMING AKUMS EVENTS</h1>
 
-<!-- ====== SINGLE EVENT CARD (Self-contained) ====== -->
-<section id="event-single" class="py-5">
-  <div class="container">
-    <article id="event-static-card" aria-labelledby="event-title-1">
+    <p class="text-center text-muted mb-5" style="max-width: 700px; margin: 0 auto;">
+    Stay in the loop with what’s happening at AKUMS! Explore upcoming events designed to empower, inspire, and bring our medical community together.
+  </p>
 
-<!-- STATIC EVENT IMAGE -->
-<div class="event-static-image">
-  <img src="/assets/images/placeholder.png" 
-       alt="AKUMS Health Week 2025" 
-       loading="lazy" 
-       style="width:100%; height:auto; border-radius: 12px; object-fit: cover;">
+ <nav id="event-nav">
+  <button class="nav-btn status-btn " data-category="next-up">Next Up</button>
+  <button class="nav-btn status-btn " data-category="coming-soon">Coming Soon</button>
+  <button class="nav-btn status-btn " data-category="conference">Conferences</button>
+  <button class="nav-btn status-btn " data-category="workshop">Workshops</button>
+  <button class="nav-btn status-btn " data-category="hot">Hot</button>
+  <button class="nav-btn status-btn " data-category="fun">Fun Events</button>
+  <button class="nav-btn status-btn " data-category="social">Social</button>
+  <button class="nav-btn status-btn " data-category="leadership">Leadership</button>
+    <button class="nav-btn status-btn " data-category="past">Past Events</button>
+  </nav>
+
+
+  <div id="events-container-entry" class="mt-4" ></div>
+
 </div>
 
-      <!-- EVENT CONTENT -->
-      <div class="event-body">
-        <header class="event-header">
-          <h3 id="event-title-1" class="event-title">AKUMS Health Week 2025</h3>
-          <p class="event-subtitle">Empowering student-led healthcare innovation</p>
-        </header>
+<section id="sponsor-invite">
+  <div class="sponsor-box">
+    <h2>Support Our Next Event</h2>
+    <p>
+      Partner with AKUMS to empower medical students, support health innovation,
+      and elevate impactful community initiatives.  
+      Your sponsorship helps us host trainings, outreach programs, and student-led projects.
+    </p>
 
-        <!-- compact info row -->
-        <ul class="event-info" aria-hidden="false">
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5H7z"/></svg><strong>Mar 12–14, 2025</strong><small> • 9:00 AM – 5:00 PM</small></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3 7h7l-5.6 4 2 7L12 16.5 5.6 20l2-7L2 9h7z"/></svg><strong>Main Hall, Kenyatta University</strong></li>
-          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zM6 18v-1c0-2.97 4-5 6-5s6 2.03 6 5v1H6z"/></svg><strong>AKUMS Exec</strong></li>
-        </ul>
+    <div class="sponsor-actions">
+      <a href="#" class="btn primary">Become a Sponsor</a>
+      <a href="#" class="btn ghost">View Sponsorship Package</a>
+    </div>
 
-        <!-- description -->
-        <p class="event-desc">
-          A three-day program combining hands-on workshops, research showcases, and community outreach. Expect keynote speakers, student poster sessions, practical skills labs, and a community screening drive. Ideal for students interested in clinical skills, public health, and research collaboration.
-        </p>
-
-        <!-- highlights / chips -->
-        <div class="event-chips" aria-hidden="true">
-          <span class="chip">🎤 Guest Speakers</span>
-          <span class="chip">🧪 Research Showcase</span>
-          <span class="chip">🤝 Networking</span>
-          <span class="chip">📜 Certificates</span>
-        </div>
-
-        <!-- CTA buttons -->
-        <div class="event-cta">
-          <a href="#register" class="btn primary" id="register-btn">Register Now</a>
-          <a href="/assets/docs/healthweek-brochure.pdf" class="btn ghost" download>Download Brochure</a>
-        </div>
-      </div>
-
-      <!-- FOOTER STRIP: status + sponsors -->
-      <div class="event-footer">
-        <span class="status upcoming">Upcoming</span>
-        <div class="tiny-sponsors" aria-hidden="true">
-          <img src="/assets/images/IFMSA_logo_horizontal_blue.webp" alt="IFMSA logo" class="tiny-logo" loading="lazy">
-          <img src="/assets/images/msakelogo.png" alt="Kenyatta University logo" class="tiny-logo" loading="lazy">
-        </div>
-      </div>
-    </article>
+    <img src="/assets/images/logo.png" alt="sponsor icons" class="sponsor-illustration">
   </div>
-</main>
+</section>
 
+  
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
