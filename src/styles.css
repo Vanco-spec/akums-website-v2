@@ -2343,11 +2343,11 @@ hr {
 }
 
 .nav .btn {
-  width: 50px;
+  width: 49px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.7);
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2.5px solid rgba(0, 0, 0, 0.6);
   padding: 0.75rem;
   border-radius: 50%;
   cursor: pointer;
@@ -2359,6 +2359,7 @@ hr {
 }
 
 .nav .btn:hover {
+  border: 2.5px solid rgba(0, 0, 0, 0.6);
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -2452,10 +2453,14 @@ h1.text-center.mb-5::after {
   border: 1px solid #ccc;
   background: #000;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: background 0.3s;
   flex-shrink: 0;  /* prevents button from shrinking on small screens */
   white-space: nowrap; /* prevents text wrapping */
+}
+
+.nav-btn.hover {
+  border-radius: 50px;
 }
 
 
@@ -2484,7 +2489,7 @@ h1.text-center.mb-5::after {
   justify-content: space-between;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 12px;
+  border-radius: 40px;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
