@@ -1521,6 +1521,7 @@ table th {
 
 /* ====== WHO WE ARE SECTION ====== */
 .who-we-are {
+  height: 750px;
   background: linear-gradient(90deg, #D4A14A, #F3E5AB);
   color: #F5F5F5;
   overflow: hidden;
@@ -1530,6 +1531,7 @@ table th {
 
 /* Section Title */
 .section-title {
+  margin-top: 90px;
   font-weight: 700;
   font-size: 2.2rem;
   color: #000;
@@ -1643,7 +1645,7 @@ table th {
 
 /* ====== MAGAZINE SECTION ====== */
 #magazine {
-  min-height: 700px;
+  min-height: 800px;
   background: linear-gradient(90deg, #88B04B, #CDEAC0);
   color: #000000;
   font-family: "Poppins", sans-serif;
@@ -1652,7 +1654,7 @@ table th {
 
 /* Section title */
 #magazine .section-title {
-  padding-top: 60px;
+  padding-top: 0px;
   font-weight: 700;
   font-size: 2.8rem;
   color: #000000;
@@ -1676,7 +1678,8 @@ table th {
 
 /* Image hover effect */
 .magazine-img {
- 
+  padding-top: 20px;
+  width: 450px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -1793,7 +1796,7 @@ table th {
 
 /* ===== IMPACT SECTION ===== */
 .impact-section {
-  min-height: 550px;
+  min-height: 750px;
   background-color: #F5E9D3;
   color: #000;
   text-align: center;
@@ -1803,7 +1806,7 @@ table th {
 
 /* ===== Section Title ===== */
 .impact-section .section-title {
-  padding-top: 20px;
+  padding-top: 70px;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -2011,7 +2014,7 @@ table th {
   background-color: #fff;
   color: #000;
   padding: 180px 20px 220px; /* increased top & bottom padding */
-  min-height: 400px; /* ensures more overall height */
+  min-height: 600px; /* ensures more overall height */
   overflow: hidden;
   text-align: center;
 }
@@ -2027,7 +2030,7 @@ table th {
 
 /* Sponsors container */
 #sponsors .row {
-  margin-top: 40px;
+  margin-top: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -4806,99 +4809,6 @@ h1.text-center.mb-5::after {
 @media (max-width: 420px) {
   .grid-gallery { grid-template-columns: 1fr; }
 }
-
-/* ===== IMPACT SECTION ===== */
-.impact-section {
-  margin-top: 80px;
-  background: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.impact-section::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 200px;
-  height: 200px;
-  background: rgba(15, 91, 91, 0.1);
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.impact-section::after {
-  content: "";
-  position: absolute;
-  bottom: -60px;
-  left: -60px;
-  width: 180px;
-  height: 180px;
-  background: rgba(31, 77, 59, 0.1);
-  border-radius: 50%;
-  filter: blur(60px);
-}
-
-.stat-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 91, 91, 0.2);
-  transition: all 0.4s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.stats-icon {
-  font-size: 2.6rem;
-  color: var(--primary, #0F5B5B);
-  transition: transform 0.3s ease;
-}
-
-.stat-card:hover .stats-icon {
-  transform: scale(1.15);
-}
-
-.stat-number {
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #1F4D3B;
-  margin: 10px 0;
-}
-
-.stat-label {
-  font-size: 1rem;
-  color: #555;
-}
-
-/* Skeleton loaders */
-.stats-skeleton .skeleton-box {
-  width: 150px;
-  height: 130px;
-  background: linear-gradient(90deg, #e0e0e0 25%, #f3f3f3 50%, #e0e0e0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite linear;
-  border-radius: 1rem;
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-/* Fade + Zoom */
-.fade-zoom {
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-zoom.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
 
 /* ====== CONNECT WITH AKUMS SECTION ====== */
 .connect-section {
