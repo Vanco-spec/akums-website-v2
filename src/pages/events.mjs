@@ -284,6 +284,16 @@ function initEventButtons() {
 renderEvents('next-up');
 }
 
+// Intersection Observer for ad animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+document.querySelectorAll('.fade-ad').forEach(el => observer.observe(el));
+
 // Export a single init function
 export function init() {
   initEventButtons();

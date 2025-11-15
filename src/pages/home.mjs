@@ -1,5 +1,27 @@
 export function init() {
 
+
+function hideLoader() {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  loader.classList.add("hidden");
+
+  // Remove completely after animation
+  setTimeout(() => loader.remove(), 1800);
+}
+
+// If page loads from cache extremely fast
+if (document.readyState === "complete" || document.readyState === "interactive") {
+  hideLoader();
+} else {
+  document.addEventListener("DOMContentLoaded", hideLoader);
+}
+
+// Also run after full load (fallback)
+window.addEventListener("load", hideLoader);
+
+
   // ===== HERO background =====
   const heroSection = document.querySelector(".hero-section");
   if (heroSection) {
@@ -8,46 +30,54 @@ export function init() {
     bgImage.onload = () => heroSection.classList.add("hero-loaded");
   }
 
-  // ===== IMPACT COUNTERS =====
-  const skeleton = document.getElementById("impact-skeleton");
-  const statsContainer = document.getElementById("impact-stats");
-  const stats = document.querySelectorAll(".stat-number");
+// ===== NEW IMPACT RING ANIMATION =====
 
-  function animateCounters() {
-    stats.forEach(stat => {
-      const target = +stat.dataset.target;
-      let count = 0;
-      const increment = Math.ceil(target / 80);
-      const update = () => {
-        count += increment;
-        if (count < target) {
-          stat.innerText = count.toLocaleString();
-          requestAnimationFrame(update);
-        } else {
-          stat.innerText = target.toLocaleString() + "+";
-        }
-      };
-      update();
-    });
-  }
+// Get elements ONCE at the top
+const impactStats = document.querySelector('#impact-stats');
+const skeleton = document.getElementById("impact-skeleton");
 
-  if (skeleton && statsContainer) {
-    setTimeout(() => {
-      skeleton.classList.add("d-none");
-      statsContainer.classList.remove("d-none");
-    }, 800);
+// Remove skeleton + show stats BEFORE observing
+if (skeleton && impactStats) {
+  skeleton.classList.add("d-none");
+  impactStats.classList.remove("d-none");
+}
 
-    const counterObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) animateCounters();
-        });
-      },
-      { threshold: 0.3 }
-    );
-    const impactSection = document.querySelector("#impact");
-    if (impactSection) counterObserver.observe(impactSection);
-  }
+function animateStats() {
+  const stats = document.querySelectorAll('.stat-ring');
+  stats.forEach(stat => {
+    const target = parseInt(stat.dataset.target);
+    const numberEl = stat.querySelector('.stat-number');
+    const progressEl = stat.querySelector('.ring-progress');
+
+    let current = 0;
+    const increment = target / 100;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+
+      numberEl.textContent = Math.floor(current);
+      const progress = (current / target) * 100;
+      progressEl.style.setProperty('--progress', `${progress}%`);
+    }, 30);
+  });
+}
+
+// Intersection Observer
+const impactObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateStats();
+    }
+  });
+}, { threshold: 0.3 });
+
+// Start observing stats container
+if (impactStats) impactObserver.observe(impactStats);
+
 
   // ===== TIMELINE ITEMS =====
   const timelineItems = document.querySelectorAll(".timeline-item");
@@ -57,27 +87,15 @@ export function init() {
   );
   timelineItems.forEach(item => timelineObserver.observe(item));
 
-  // ===== SPONSORS PLACEHOLDER & FADE-IN =====
-  const sponsors = document.querySelectorAll("#sponsors .sponsor-logo");
-  sponsors.forEach(img => {
-    const placeholder = document.createElement("div");
-    placeholder.className = "sponsor-placeholder";
-    placeholder.style.width = img.offsetWidth + "px";
-    placeholder.style.height = img.offsetHeight + "px";
-    placeholder.style.margin = "0 auto 15px";
-    img.style.opacity = 0;
-    img.parentNode.insertBefore(placeholder, img);
+// Intersection Observer for hall of fame animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
-
-  setTimeout(() => {
-    sponsors.forEach(img => {
-      const placeholder = img.previousElementSibling;
-      if (placeholder && placeholder.classList.contains("sponsor-placeholder")) placeholder.remove();
-      img.style.transition = "opacity 0.6s ease-in";
-      img.style.opacity = 1;
-    });
-  }, 800);
-
+});
+document.querySelectorAll('.fade-hall').forEach(el => observer.observe(el));
   // ===== FADE-ON-SCROLL ELEMENTS & PARALLAX =====
   const fadeElements = document.querySelectorAll(".fade-on-scroll-left, .fade-on-scroll-right, .fade-item");
   const parallaxImg = document.querySelector(".fade-on-scroll-left img");
@@ -104,6 +122,8 @@ export function init() {
     }
   };
 
+
+  
   window.addEventListener("scroll", onScroll);
   onScroll();
 

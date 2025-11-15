@@ -38,6 +38,21 @@
 
 <body data-page="home">
 
+  <!-- ===== LOADING SCREEN ===== -->
+<div id="loader">
+    <div class="circle-wrap">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+    <!-- Hovering Logo -->
+  <img src="/assets/images/logo.png" id="loader-logo" alt="AKUMS Logo">
+</div>
+
+
 <!-- Header with Navbar (updated: floating, rounded, partial width) -->
 <header id="site-header"><!-- navbar will render into this --></header>
 
@@ -116,25 +131,29 @@
 </section>
 
 <!-- ====== WHO WE ARE SECTION ====== -->
-<section class="who-we-are py-5" id="about-us">
+<section class="who-we-are py-5" id="about-us" aria-labelledby="about-title">
   <div class="container">
-    <div class="row align-items-center g-5" >
+    <div class="row align-items-center g-5">
       
       <!-- Image Side -->
       <div class="col-md-6 fade-on-scroll-left">
         <div class="about-img-wrapper">
           <img
             src="/assets/images/ushome.jpg"
-            alt="AKUMS Members"
+            alt="AKUMS Members - Future Healthcare Professionals"
             class="img-fluid rounded-3 shadow about-img"
             loading="lazy"
           />
+          <!-- Subtle DNA motif overlay (optional, for theme) -->
+          <div class="dna-overlay"></div>
         </div>
       </div>
 
       <!-- Text Side -->
       <div class="col-md-6 fade-on-scroll-right">
-        <h2 class="section-title mb-3">Who We Are</h2>
+        <h2 id="about-title" class="section-title mb-4">
+          <span class="icon-dna"></span> Who We Are
+        </h2>
         <p class="lead fade-item delay-1">
           The <strong>Association of Kenyatta University Medical Students (AKUMS)</strong>
           is a student-led organization uniting future healthcare professionals with a shared
@@ -154,121 +173,166 @@
         </p>
        
         <!-- Inspirational Quote -->
-        <blockquote class="quote fade-item delay-5 bg-black">
+        <blockquote class="quote fade-item delay-4">
           <em>“Empowering future medics, transforming community health.”</em>
         </blockquote>
 
         <!-- Call to Action -->
-        <a href="/about_us.html" class="btn fade-item delay-6 mt-3">
+        <a href="/about_us.html" class="btn fade-item delay-5 mt-4" aria-label="Learn more about AKUMS">
           Discover Our Story
         </a>
       </div>
     </div>
-  </div>
+  </div>  
 </section>
+<!-- ====== END WHO WE ARE SECTION ====== -->
 
 <!-- Magazine Section -->
-<section class="py-5 " id="magazine">
+<section class="py-5" id="magazine" aria-labelledby="magazine-title">
   <div class="container">
-    <h2 class="section-title text-center mb-4 fade-item delay-1">AKUMS MAGAZINE</h2>
-    <div class="row align-items-center g-4">
-
-      <!-- Text Column -->
-      <div class="col-md-6 fade-item delay-2">
-        <p class="magazine-description fade-item delay-3" >
-          The <strong>AKUMS Magazine</strong> is our official publication capturing the spirit, creativity, 
-          and achievements of Kenyatta University medical students. It features inspiring articles, research highlights, 
-          interviews, and unique insights into student life, leadership, and innovation.
-        </p>
-        <p class="magazine-description fade-item delay-4" >
-          Explore stories of creativity, peer achievements, and community impact. Whether you’re seeking academic inspiration, 
-          student perspectives, or the latest in campus life, the AKUMS Magazine offers a fresh look at the journey of future healthcare leaders.
-        </p>
-        <p class="magazine-description fade-item delay-5 ">
-          Dive in to be inspired, stay informed, and discover how our members are making a meaningful difference every day.
-        </p>
-        <a href="/resources.html" class="btn btn-primary fade-item delay-6 mt-3">
-          Read More
-        </a>
-      </div>
-
-      <!-- Image Column -->
-      <div class="col-md-6 text-center fade-item delay-2">
-        <div class="magazine-img-wrapper">
-          <img src="/assets/images/homemagazine.jpg" 
-               alt="AKUMS Magazine Cover" 
-               class="img-fluid rounded shadow-sm magazine-img" 
-               loading="lazy">
+    <div class="magazine-card">
+      <div class="row align-items-center g-5">
+        
+        <!-- Text Column -->
+        <div class="col-lg-6 fade-item delay-2">
+          <h2 id="magazine-title" class="section-title mb-4">
+            <span class="icon-book"></span> AKUMS MAGAZINE
+          </h2>
+          <p class="magazine-description fade-item delay-3">
+            The <strong>AKUMS Magazine</strong> is our official publication capturing the spirit, creativity, 
+            and achievements of Kenyatta University medical students. It features inspiring articles, research highlights, 
+            interviews, and unique insights into student life, leadership, and innovation.
+          </p>
+          <p class="magazine-description fade-item delay-4">
+            Explore stories of creativity, peer achievements, and community impact. Whether you’re seeking academic inspiration, 
+            student perspectives, or the latest in campus life, the AKUMS Magazine offers a fresh look at the journey of future healthcare leaders.
+          </p>
+          <p class="magazine-description fade-item delay-5">
+            Dive in to be inspired, stay informed, and discover how our members are making a meaningful difference every day.
+          </p>
+          
+          <!-- Inspirational Badge -->
+          <div class="magazine-badge fade-item delay-6">
+            <em>“Stories that heal and inspire.”</em>
+          </div>
+          
+          <a href="/resources.html" class="btn btn-primary fade-item delay-7 mt-4" aria-label="Explore AKUMS Magazine">
+            Read More
+          </a>
         </div>
-      </div>
 
+        <!-- Image Column -->
+        <div class="col-lg-6 text-center fade-item delay-2">
+          <div class="magazine-img-wrapper">
+            <img src="/assets/images/homemagazine.jpg" 
+                 alt="AKUMS Magazine Cover - Stories of Medical Innovation" 
+                 class="img-fluid magazine-img" 
+                 loading="lazy">
+            <div class="img-overlay">
+              <span class="overlay-text">Latest Edition</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
 
-
 <!-- ====== QUICK STATS / IMPACT SECTION ====== -->
-<section id="impact" class="impact-section py-5">
-  <div class="container text-center" >
-    <h2 class="section-title mb-3 fade-zoom">OUR IMPACT</h2>
-    <p class="lead text-muted mb-4 fade-zoom">
+<section id="impact" class="impact-section py-5" aria-labelledby="impact-title">
+  <div class="container text-center">
+    <h2 id="impact-title" class="section-title mb-3 fade-zoom">OUR IMPACT</h2>
+    <p class="lead text-muted mb-5 fade-zoom">
       Empowering Kenyatta University medical students through collaboration, service, and excellence.
     </p>
 
     <!-- Skeleton loader -->
-    <div id="impact-skeleton" class="stats-skeleton d-flex justify-content-center gap-3 flex-wrap mb-4">
-      <div class="skeleton-box"></div>
-      <div class="skeleton-box"></div>
-      <div class="skeleton-box"></div>
+    <div id="impact-skeleton" class="stats-skeleton d-flex justify-content-center gap-4 flex-wrap mb-4">
+      <div class="skeleton-ring"></div>
+      <div class="skeleton-ring"></div>
+      <div class="skeleton-ring"></div>
     </div>
 
     <!-- Actual stats -->
     <div id="impact-stats" class="row g-4 d-none justify-content-center">
-      <div class="col-10 col-sm-6 col-md-4 col-lg-3 fade-zoom">
-        <div class="stat-card p-4 rounded-4 shadow-sm">
-          <i class="bi bi-people-fill stats-icon mb-2"></i>
-          <h3 class="stat-number" data-target="1000">0</h3>
-          <p class="stat-label">Active Members</p>
+      <div class="col-12 col-sm-6 col-md-4 fade-zoom">
+        <div class="stat-ring-container">
+          <div class="stat-ring" data-target="1000">
+            <div class="ring-progress" style="--progress: 0%"></div>
+            <div class="ring-inner">
+              <i class="bi bi-people-fill stats-icon"></i>
+              <h3 class="stat-number">0</h3>
+              <p class="stat-label">Active Members</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-10 col-sm-6 col-md-4 col-lg-3 fade-zoom">
-        <div class="stat-card p-4 rounded-4 shadow-sm">
-          <i class="bi bi-calendar-event-fill stats-icon mb-2"></i>
-          <h3 class="stat-number" data-target="15">0</h3>
-          <p class="stat-label">Annual Events</p>
+      <div class="col-12 col-sm-6 col-md-4 fade-zoom">
+        <div class="stat-ring-container">
+          <div class="stat-ring" data-target="15">
+            <div class="ring-progress" style="--progress: 0%"></div>
+            <div class="ring-inner">
+              <i class="bi bi-calendar-event-fill stats-icon"></i>
+              <h3 class="stat-number">0</h3>
+              <p class="stat-label">Annual Events</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-10 col-sm-6 col-md-4 col-lg-3 fade-zoom">
-        <div class="stat-card p-4 rounded-4 shadow-sm">
-          <i class="bi bi-lightbulb-fill stats-icon mb-2"></i>
-          <h3 class="stat-number" data-target="25">0</h3>
-          <p class="stat-label">Projects & Initiatives</p>
+      <div class="col-12 col-sm-6 col-md-4 fade-zoom">
+        <div class="stat-ring-container">
+          <div class="stat-ring" data-target="25">
+            <div class="ring-progress" style="--progress: 0%"></div>
+            <div class="ring-inner">
+              <i class="bi bi-lightbulb-fill stats-icon"></i>
+              <h3 class="stat-number">0</h3>
+              <p class="stat-label">Projects & Initiatives</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-    <!-- Sponsors / Partners Section -->
-<section class="py-5" id="sponsors">
+<!-- Sponsors / Partners Section -->
+<section class="py-5" id="sponsors" aria-labelledby="sponsors-title">
   <div class="container">
-    <h2 class="section-title mb-4 text-center">OUR SPONSORS & PARTNERS</h2>
-    <div class="row g-4 justify-content-center align-items-center">
-
-      <div class="col-6 col-md-3 text-center">
-        <img src="/assets/images/IFMSA_logo_horizontal_blue.webp" alt="Sponsor: Kenyatta University Health Sciences Department" class="img-fluid sponsor-logo" loading="lazy">
-      </div>
-      <div class="col-6 col-md-3 text-center">
-        <img src="/assets/images/msakelogo.png" alt="Sponsor: MSAKE" class="img-fluid sponsor-logo" loading="lazy">
-      </div>
-      <div class="col-6 col-md-3 text-center">
-        <img src="/assets/images/kulogo.png" alt="Sponsor: Kenyatta University" class="img-fluid sponsor-logo" loading="lazy">
-      </div>
-      <div class="col-6 col-md-3 text-center">
-        <img src="/assets/images/kma-final-logo.png" alt="Sponsor: Kenya Medical Association" class="img-fluid sponsor-logo" loading="lazy">
+    <h2 id="sponsors-title" class="section-title mb-5 text-center">OUR SPONSORS & PARTNERS</h2>
+    <div class="sponsors-hall">
+      <div class="row g-5 justify-content-center align-items-center">
+        
+        <div class="col-6 col-md-3 text-center sponsor-frame fade-hall">
+          <div class="frame-inner">
+            <img src="/assets/images/IFMSA_logo_horizontal_blue.webp" alt="Sponsor: IFMSA" class="img-fluid sponsor-logo" loading="lazy" tabindex="0">
+            <div class="frame-glow"></div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-md-3 text-center sponsor-frame fade-hall">
+          <div class="frame-inner">
+            <img src="/assets/images/msakelogo.png" alt="Sponsor: MSAKE" class="img-fluid sponsor-logo" loading="lazy" tabindex="0">
+            <div class="frame-glow"></div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-md-3 text-center sponsor-frame fade-hall">
+          <div class="frame-inner">
+            <img src="/assets/images/kulogo.png" alt="Sponsor: Kenyatta University" class="img-fluid sponsor-logo" loading="lazy" tabindex="0">
+            <div class="frame-glow"></div>
+          </div>
+        </div>
+        
+        <div class="col-6 col-md-3 text-center sponsor-frame fade-hall">
+          <div class="frame-inner">
+            <img src="/assets/images/kma-final-logo.png" alt="Sponsor: Kenya Medical Association" class="img-fluid sponsor-logo" loading="lazy" tabindex="0">
+            <div class="frame-glow"></div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>
