@@ -1,22 +1,12 @@
-
-const counters = document.querySelectorAll('.counter');
-  const speed = 200;
-
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-      const inc = target / speed;
-
-      if (count < target) {
-        counter.innerText = Math.ceil(count + inc);
-        setTimeout(updateCount, 25);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    updateCount();
+// Intersection Observer for fade animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
   });
+});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
   document.addEventListener("DOMContentLoaded", () => {
   // ===== Fade + Zoom Animation (repeatable) =====
