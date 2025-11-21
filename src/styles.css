@@ -1659,7 +1659,7 @@ table th {
 /* Section Title */
 .section-title {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #000;
   margin-top: 67px;
   margin-bottom: 2rem;
@@ -1877,9 +1877,11 @@ p {
 /* ====== MAGAZINE SECTION ====== */
 #magazine {
   min-height: 80vh; /* Flexible height for responsiveness */
-  background: linear-gradient(135deg, #88B04B 0%, #CDEAC0 50%, #88B04B 100%), 
-              radial-gradient(circle at 30% 70%, rgba(136, 176, 75, 0.1) 0%, transparent 50%), 
-              radial-gradient(circle at 70% 30%, rgba(136, 176, 75, 0.1) 0%, transparent 50%); /* Subtle DNA-inspired pattern */
+  background-image:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+  linear-gradient(135deg, #e8fff1, #ffffff);
+background-size: 200px 200px, cover;
+
   background-attachment: fixed; /* Parallax effect on desktop */
   color: #333;
   font-family: "Poppins", sans-serif;
@@ -1917,7 +1919,7 @@ p {
 /* Section Title */
 .section-title {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.3rem;
   color: #000;
   text-align: left;
   position: relative;
@@ -1936,7 +1938,7 @@ p {
 
 /* Paragraphs */
 .magazine-description {
-  font-size: 1.15rem;
+  font-size: 1.0rem;
   color: #555;
   line-height: 1.8;
   margin-bottom: 1.5rem;
@@ -2184,7 +2186,7 @@ p {
   100% { transform: translateY(-100px); }
 }
 .impact-section .section-title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #000;
   margin-bottom: 60px;
@@ -2495,7 +2497,6 @@ p {
     font-size: 2rem;
   }
 }
-
 /* ================= SPONSORS / PARTNERS ================= */
 #sponsors {
   margin-top: 80px;
@@ -2504,7 +2505,7 @@ p {
   background-attachment: fixed; /* Subtle parallax for depth */
   color: #fff;
   padding: 100px 20px;
-  min-height: 95vh;
+  min-height: 85vh;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -2595,6 +2596,12 @@ p {
   position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* Ensure uniform frame size */
+  width: 150px; /* Fixed width for frames to make them uniform */
+  height: 100px; /* Fixed height for frames */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sponsor-frame::before {
@@ -2626,6 +2633,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* Frame Glow */
@@ -2647,12 +2656,14 @@ p {
 
 /* Sponsor Logos */
 .sponsor-logo {
-  height: 100px;
-  width: 130px;
-  object-fit: contain;
+  height: 100px; /* Uniform height for all logos */
+  width: 140px; /* Uniform width for all logos */
+  object-fit: contain; /* Ensures logos fit without distortion, maintaining aspect ratio */
   transition: all 0.4s ease;
   border-radius: 8px;
   filter: brightness(0.9);
+  max-width: 100%; /* Prevents overflow */
+  max-height: 100%;
 }
 
 .sponsor-logo:hover, .sponsor-logo:focus {
@@ -2679,8 +2690,8 @@ p {
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite linear;
   border-radius: 8px;
-  height: 100px;
-  width: 160px;
+  height: 80px; /* Match logo height */
+  width: 120px; /* Match logo width */
 }
 
 @keyframes shimmer {
@@ -2704,11 +2715,18 @@ p {
 
   .sponsor-frame {
     padding: 1.5rem;
+    width: 180px; /* Slightly smaller frames */
+    height: 140px;
   }
 
   .sponsor-logo {
-    height: 80px;
-    width: 140px;
+    height: 70px; /* Scaled down uniformly */
+    width: 100px;
+  }
+
+  .sponsor-placeholder {
+    height: 70px;
+    width: 100px;
   }
 }
 
@@ -2731,11 +2749,18 @@ p {
 
   .sponsor-frame {
     padding: 1.2rem;
+    width: 160px; /* Smaller for mobile */
+    height: 120px;
   }
 
   .sponsor-logo {
-    height: 70px;
-    width: 120px;
+    height: 60px; /* Scaled down uniformly */
+    width: 90px;
+  }
+
+  .sponsor-placeholder {
+    height: 60px;
+    width: 90px;
   }
 
   .fade-hall {
@@ -2756,33 +2781,41 @@ p {
 
   .sponsor-frame {
     padding: 1rem;
+    width: 140px; /* Even smaller for small phones */
+    height: 100px;
   }
 
   .sponsor-logo {
-    height: 60px;
-    width: 100px;
+    height: 50px; /* Scaled down uniformly */
+    width: 80px;
+  }
+
+  .sponsor-placeholder {
+    height: 50px;
+    width: 80px;
   }
 }
 
 /* ===== FOOTER SECTION ===== */
 .footer-section {
-background: linear-gradient(90deg, #093737, #2FA3A5, #4FA3A5);
-background-blend-mode: overlay;
- color: #ffffff;   /* pure white */
+  background: linear-gradient(90deg, #093737, #2FA3A5, #4FA3A5);
+  background-blend-mode: overlay;
+  color: #ffffff; /* pure white */
   font-family: "Poppins", sans-serif;
   overflow: hidden;
   padding-top: 60px;
   padding-bottom: 60px;
-  height: 450px;
+  /* Removed fixed height to allow dynamic sizing on small screens */
 }
 
 .footer-title {
   padding-top: 50px;
   font-weight: 600;
   font-size: 1.2rem;
-  color: linear-gradient(90deg, #0F5B5B, #007bff);   /* bright warm yellow */
+  color: linear-gradient(90deg, #0F5B5B, #007bff); /* bright warm yellow */
 }
-.footer-p{
+
+.footer-p {
   color: #000;
 }
 
@@ -2791,7 +2824,7 @@ background-blend-mode: overlay;
 }
 
 .footer-links a {
-  color: #ffffff;   /* pure white */
+  color: #ffffff; /* pure white */
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -2830,13 +2863,48 @@ hr {
 }
 
 /* Responsive */
-@media(max-width: 768px){
+@media (max-width: 768px) {
   .footer-section {
     text-align: center;
+    padding-top: 30px; /* Reduced top padding for better fit */
+    padding-bottom: 30px; /* Reduced bottom padding for better fit */
+  }
+
+  .footer-title {
+    padding-top: 20px; /* Reduced top padding to prevent excessive spacing */
+    font-size: 1rem; /* Slightly smaller font for small screens */
   }
 
   .social-icons {
     margin-top: 1rem;
+    justify-content: center; /* Center social icons */
+    display: flex; /* Ensure flex for centering */
+  }
+
+  .footer-p {
+    font-size: 0.9rem; /* Slightly smaller text for better readability */
+  }
+
+  .footer-links li {
+    margin-bottom: 0.3rem; /* Tighter spacing */
+  }
+}
+
+/* Additional small screen adjustments for very small devices */
+@media (max-width: 576px) {
+  .footer-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-title {
+    padding-top: 10px;
+    font-size: 0.95rem;
+  }
+
+  .social-icons a {
+    font-size: 1.1rem; /* Slightly smaller icons */
+    margin-right: 0.5rem;
   }
 }
 

@@ -20,27 +20,27 @@ const NAV_HTML = (isLoggedIn) => `
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavFloating">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" href="/index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="/events.html">EVENTS</a></li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="publicationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Magazine
+                MAGAZINE
               </a>
               <ul class="dropdown-menu" aria-labelledby="publicationsDropdown">
-                <li><a class="dropdown-item" href="/about-magazine.html">About</a></li>
-                <li><a class="dropdown-item" href="/submission-magazine.html">Submission</a></li>
-                <li><a class="dropdown-item" href="/issue-magazine.html">Issues</a></li>
-                <li><a class="dropdown-item" href="/team-magazine.html">Team</a></li>
+                <li><a class="dropdown-item" href="/about-magazine.html">ABOUT</a></li>
+                <li><a class="dropdown-item" href="/submission-magazine.html">SUBMISSION</a></li>
+                <li><a class="dropdown-item" href="/issue-magazine.html">ISSUES</a></li>
+                <li><a class="dropdown-item" href="/team-magazine.html">TEAM</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="/alumni.html">Alumni</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about_us.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/alumni.html">ALUMNI</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about_us.html">ABOUT US</a></li>
             ${
               !isLoggedIn
-                ? `<li class="nav-item"><a class="nav-link" href="/login.html">Login</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/signup.html">Sign Up</a></li>`
-                : `<li class="nav-item"><a class="nav-link" id="dashboard-link" href="#">Dashboard</a></li>
-                   <li class="nav-item"><a id="logout-link" class="nav-link text-danger fw-bold" href="#">Logout</a></li>`
+                ? `<li class="nav-item"><a class="nav-link" href="/login.html">LOGIN</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/signup.html">SIGN UP</a></li>`
+                : `<li class="nav-item"><a class="nav-link" id="dashboard-link" href="#">DASHBOARD</a></li>
+                   <li class="nav-item"><a id="logout-link" class="nav-link text-danger fw-bold" href="#">LOGOUT</a></li>`
             }
           </ul>
         </div>
