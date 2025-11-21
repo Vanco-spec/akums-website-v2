@@ -30,14 +30,14 @@ export function initFooter() {
              <li><a href="about_us.html">About Us</a></li>
            </ul>
          </div>
-
+<br>
          <!-- Contact & Socials -->
          <div class="col-md-4">
            <h5 class="footer-title mb-3">CONTACT & SOCIALS</h5>
            <p class="small footer-p mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Kenyatta University, School of Health Sciences</p>
            <p class="small footer-p mb-1"><i class="bi bi-envelope-fill me-2"></i>Akumssecretariat@gmail.com</p>
            <p class="small footer-p mb-3"><i class="bi bi-telephone-fill me-2"></i>+254 700 000 000</p>
-
+<br><br><br>
            <div class="social-icons">
              <a href="https://www.instagram.com/a.k.u.m.s_ku?igsh=MXdmbTVldjl4MmJxZg=="><i class="bi bi-instagram"></i></a>
              <a href="https://www.tiktok.com/@akums.ku?_r=1&_t=ZM-91aoCHecs04"><i class="bi bi-tiktok"></i></a>
@@ -57,7 +57,7 @@ export function initFooter() {
 
        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small fade-zoom">
          <p class=" footer-p mb-2 mb-md-0"> &copy; 2025 Association of Kenyatta University Medical Students (AKUMS). All rights reserved.</p>
-         <p class="mb-0">Created by <a href="https://yourportfolio.com" target="_blank">AKUMS,ICT TEAM</a></p>
+         <p class="mb-0">Created $ designed by <a href="https://yourportfolio.com" target="_blank">AKUMS-ICT TEAM</a></p>
        </div>
      </div>
 

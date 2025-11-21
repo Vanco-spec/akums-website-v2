@@ -2817,10 +2817,11 @@ background-size: 200px 200px, cover;
 
 .footer-p {
   color: #000;
+  margin-bottom: 0.8rem; /* increases spacing between contact lines */
 }
 
 .footer-links li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-links a {
@@ -2830,8 +2831,9 @@ background-size: 200px 200px, cover;
 }
 
 .footer-links a:hover {
-  color: #ffffff;
-  transform: translateX(4px);
+  color: #ff9900; /* change to your desired color */
+  transform: translateX(4px) scale(1.1); /* increases size by 10% */
+  transition: transform 0.3s ease, color 0.3s ease; /* smooth animation */
 }
 
 .social-icons a {
@@ -2841,12 +2843,49 @@ background-size: 200px 200px, cover;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
+.social-icons {
+  margin-top: 1rem; /* adds space above social icons */
+}
+
+.social-icons a {
+  color: #cfd8dc;
+  font-size: 1.3rem;
+  margin-right: 0.7rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects with real brand colors */
 .social-icons a:hover {
-  color: #ffffff;
   transform: translateY(-4px) scale(1.1);
 }
 
+.social-icons a[href*="instagram"]:hover {
+  color: #E1306C;
+}
+
+.social-icons a[href*="tiktok"]:hover {
+  color: #000;
+}
+
+.social-icons a[href*="x.com"]:hover {
+  color: #1DA1F2;
+}
+
+.social-icons a[href*="linkedin"]:hover {
+  color: #0077B5;
+}
+
+.social-icons a[href*="linktr.ee"]:hover {
+  color: #FF5A5F; /* Linktree brand color */
+}
+
+.social-icons a[href^="mailto:"]:hover {
+  color: #D44638; /* Gmail red */
+}
+
+
 hr {
+  margin-top: 1.0rem;
   opacity: 0.2;
 }
 
