@@ -2597,7 +2597,7 @@ background-size: 200px 200px, cover;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   /* Ensure uniform frame size */
-  width: 150px; /* Fixed width for frames to make them uniform */
+  width: 13px; /* Fixed width for frames to make them uniform */
   height: 100px; /* Fixed height for frames */
   display: flex;
   justify-content: center;
@@ -3145,12 +3145,14 @@ h1.text-center.mb-5::after {
   display: flex;
   gap: 10px;
   margin-bottom: 100px;
-    /* new for small screens */
-  overflow-x: auto;       /* allow horizontal scroll */
+  overflow-x: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* smooth on iOS */
-  padding-bottom: 10px;   /* avoid cutting off shadow of buttons */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+  justify-content: center;  /* centers items */
+  flex-wrap: nowrap;        /* prevent wrapping so scroll works */
 }
+
 
 /* hide scrollbar for better look (optional) */
 #event-nav::-webkit-scrollbar {
@@ -3199,7 +3201,7 @@ h1.text-center.mb-5::after {
   justify-content: space-between;
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 40px;
+  border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;

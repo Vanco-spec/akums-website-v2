@@ -67,3 +67,5 @@ document.addEventListener("DOMContentLoaded", () => {
       if(a.href && a.getAttribute('target')===null) a.setAttribute('target','_blank');
     });
   })();
+
+  

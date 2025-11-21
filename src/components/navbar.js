@@ -10,7 +10,7 @@ const NAV_HTML = (isLoggedIn) => `
         <a class="navbar-brand d-flex align-items-center" href="/index.html">
           <img  src="/assets/images/logo.png" height="36" class="me-2" alt=" " loading="lazy">
           <span class="navbar-text text-wrap text-dark">
-            Association of Kenyatta University Medical Students
+            Association of Kenyatta University Medicine Students
           </span>
         </a>
 
