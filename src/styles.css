@@ -4889,7 +4889,6 @@ h1.text-center.mb-5::after {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-
 /* ====== THEME COLORS ====== */
 :root {
   --akums-light-blue: #d9ecf2;
@@ -4898,85 +4897,121 @@ h1.text-center.mb-5::after {
   --akums-gold: #d4a14a;
 }
 
-/* ====== JOIN ALUMNI NETWORK SECTION ====== */
-.join-alumni-section {
-  position: relative;
-  height: 650px;
-  background: url("../assets/images/alumnihero.jpg") no-repeat center -10% / cover;
-  background-attachment: fixed; 
-  color: #fff;
+/* ===== ALUMNI HERO ===== */
+.alumni-hero {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8, #0f172a);
+  padding: 12rem 1rem 12rem; /* ↑ top | sides | bottom */
+  min-height: 100vh; /* Modern touch: Ensure full viewport height for better visual impact */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
+  align-items: center; /* Center content vertically */
 }
 
-
-/* Soft gradient overlay */
-.join-alumni-section .overlay {
+.alumni-pattern {
   position: absolute;
   inset: 0;
-  z-index: 1;
+  opacity: 0.08;
+  background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
 }
 
-/* Text container */
-.join-alumni-section .container {
+.alumni-content {
   position: relative;
-  z-index: 2;
-  max-width: 850px;
-  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* Heading & text */
-.join-alumni-section h2 {
-  font-size: 2.6rem;
-  color: #ffffff;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+.alumni-icon i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: var(--akums-gold); /* Modern touch: Use theme color for accent */
 }
 
-.join-alumni-section .lead {
+.alumni-subtitle {
   max-width: 700px;
-  margin: 0 auto;
-  color: #e7f3f6;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  margin: 1rem auto 2rem;
+  opacity: 0.9;
+  font-weight: 400px;
+  font-size: 1.1rem; /* Slightly larger for readability */
+  line-height: 1.6; /* Better line height for modern look */
 }
 
-/* Call to Action Button */
-.join-alumni-section .join-btn {
-  background: var(--akums-light-blue);
-  color: var(--akums-deep-blue);
-  border: none;
-  border-radius: 50px;
-  padding: 0.8rem 2rem;
-  font-weight: 600;
-  box-shadow: 0 6px 15px rgba(0, 75, 100, 0.2);
-  transition: all 0.3s ease;
+.alumni-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
 }
 
-.join-alumni-section .join-btn:hover {
-  background: var(--akums-gold);
-  color: #fff;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+.alumni-stats {
+  padding-top: 30px;
+  margin-top: 8rem;
 }
 
-.join-alumni-section .join-btn:active {
-  transform: scale(0.97);
+.stat-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 2.2rem 1.8rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Modern touch: Add shadow transition */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-/* ====== ANIMATIONS ====== */
-.fade-zoom {
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+.stat-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--akums-gold); /* Theme color for icons */
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700; /* Bolder for emphasis */
+}
+
+.stat-card p {
+  opacity: 0.9;
+  margin: 0;
+  font-size: 0.95rem; /* Slightly smaller for balance */
+}
+
+/* Wave */
+.alumni-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.alumni-wave svg {
+  width: 100%;
+  height: 120px;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up {
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
 }
-.fade-zoom.visible {
+
+.fade-up.show {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
 }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
 
 .animate-up {
   opacity: 0;
@@ -5003,23 +5038,94 @@ h1.text-center.mb-5::after {
 
 /* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .join-alumni-section {
-    height: auto;
-    padding: 4rem 1rem;
+  .alumni-hero {
+    padding: 6rem 1rem 6rem; /* Reduce padding for mobile */
+    min-height: auto; /* Allow natural height on small screens */
   }
 
-  .join-alumni-section h2 {
-    font-size: 2rem;
+  .alumni-icon i {
+    font-size: 3rem; /* Smaller icon */
   }
 
-  .join-alumni-section .lead {
-    font-size: 1rem;
+  h1 {
+    font-size: 1.8rem; /* Smaller heading */
+    line-height: 1.3; /* Tighter line height */
+  }
+
+  .alumni-subtitle {
+    font-size: 1rem; /* Smaller subtitle */
+    max-width: 100%; /* Full width on mobile */
+    margin: 1rem 0 2rem; /* Adjust margins */
+  }
+
+  .alumni-actions {
+    gap: 2rem; /* Smaller gap */
+  }
+
+  .alumni-stats {
+    margin-top: 4rem; /* Reduce top margin */
+  }
+
+  .stat-card {
+    padding: 1.5rem 1.2rem; /* Smaller padding */
+    margin-bottom: 1rem; /* Reduce bottom margin */
+  }
+
+  .stat-card i {
+    font-size: 1.5rem; /* Smaller icon */
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem; /* Smaller stat number */
+  }
+
+  .stat-card p {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .alumni-wave svg {
+    height: 80px; /* Smaller wave height */
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-hero {
+    padding: 7rem 1rem 4rem; /* Even smaller padding for very small screens */
+  }
+
+  .alumni-icon i {
+    font-size: 2.5rem; /* Even smaller icon */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .alumni-subtitle {
+    font-size: 0.95rem; /* Smaller subtitle */
+  }
+
+  .alumni-actions {
+    gap: 1rem; /* Tighter gap */
+    flex-direction: column; /* Stack vertically if needed */
+  }
+
+  .stat-card {
+    padding: 1.2rem 1rem; /* Smaller padding */
+  }
+
+  .stat-card h3 {
+    font-size: 1.3rem; /* Smaller stat number */
+  }
+
+  .alumni-wave svg {
+    height: 60px; /* Smaller wave */
   }
 }
 /* ====== COMING SOON SECTION ====== */
 .coming-soon-section {
-  height: 80vh;
-  margin-top: 100px;
+  height: 100vh;
+  margin-top: 40px;
   background: linear-gradient(135deg, #f8fbff 0%, #e0f2ff 50%, #f8fbff 100%), 
               radial-gradient(circle at 30% 70%, rgba(77, 168, 255, 0.1) 0%, transparent 50%), 
               radial-gradient(circle at 70% 30%, rgba(10, 59, 109, 0.05) 0%, transparent 50%);
@@ -5068,7 +5174,7 @@ h1.text-center.mb-5::after {
   width: 80px;
   height: 4px;
   background: linear-gradient(90deg, #4da8ff, #007bff);
-  margin: 10px auto;
+  margin: 40px auto;
   border-radius: 2px;
 }
 
@@ -5238,67 +5344,181 @@ h1.text-center.mb-5::after {
   }
 }
 
-
 /* ====== ALUMNI ENGAGEMENT SECTION ====== */
 .alumni-engagement {
-  background-color: #f9f9f9;
+  background: linear-gradient(
+    180deg,
+    #f9f9f9 0%,
+    #ffffff 100%
+  );
+  margin-bottom: 50px;
+  padding: 5rem 0; /* Modern touch: Consistent padding */
+  position: relative; /* For potential overlays or effects */
 }
 
 .alumni-engagement .section-title {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 700;
-  color: var(--primary, #0F5B5B);
+  color: #003366;
   position: relative;
+  margin-bottom: 1rem;
+  text-align: center; /* Ensure centering */
 }
 
 .alumni-engagement .section-title::after {
   content: '';
   display: block;
-  width: 80px;
+  width: 90px;
   height: 4px;
-  background: var(--accent, #D4A14A);
-  margin: 10px auto;
+  background: #D4A14A;
+  margin: 12px auto 0;
   border-radius: 2px;
 }
 
+/* Main CTA */
+.engagement-main-btn {
+  padding: 0.9rem 2.2rem;
+  font-weight: 600;
+  max-width: 500px;
+  border-radius: 50px; /* Modern touch: Pill shape for button */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover */
+}
+
+.engagement-main-btn:hover {
+  transform: translateY(-2px); /* Subtle lift */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+/* Cards */
 .engagement-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  padding-bottom: 30px;
+  margin: 0 auto; /* Modern touch: Ensure centering */
+  max-width: 100%; /* Flexible width */
 }
 
 .engagement-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
 }
 
-.engagement-card i {
-  transition: transform 0.3s ease;
+/* Icon Wrapper */
+.engagement-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  color: #fff;
+  transition: transform 0.3s ease; /* Modern touch: Icon animation */
 }
 
-.engagement-card:hover i {
-  transform: scale(1.2);
+.engagement-icon-wrapper:hover {
+  transform: scale(1.1); /* Subtle scale on hover */
 }
 
-.engagement-card h5 {
-  color: #333;
+.engagement-icon-wrapper.mentorship {
+  background: linear-gradient(135deg, #0F5B5B, #1c8c8c);
+}
+
+.engagement-icon-wrapper.giving {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+/* Text */
+.engagement-card h4 {
+  font-weight: 600;
+  color: #00253d;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem; /* Modern touch: Slightly larger for emphasis */
 }
 
 .engagement-card p {
-  color: #666;
+  color: #0066cc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .alumni-engagement {
+    padding: 3rem 0; /* Reduce padding */
+  }
+
   .alumni-engagement .section-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
+  }
+
+  .engagement-main-btn {
+    padding: 0.8rem 2rem; /* Slightly smaller button */
+    font-size: 1rem; /* Adjust font size */
+  }
+
+  .engagement-card {
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem; /* Add space between stacked cards */
+  }
+
+  .engagement-icon-wrapper {
+    width: 60px; /* Smaller icon wrapper */
+    height: 60px;
+    font-size: 1.8rem; /* Smaller icon */
+  }
+
+  .engagement-card h4 {
+    font-size: 1.1rem; /* Smaller heading */
+  }
+
+  .engagement-card p {
+    font-size: 0.9rem; /* Smaller text */
   }
 }
 
+@media (max-width: 480px) {
+  .alumni-engagement {
+    padding: 2rem 0; /* Even smaller padding */
+  }
+
+  .alumni-engagement .section-title {
+    font-size: 1.8rem;
+  }
+
+  .engagement-main-btn {
+    padding: 0.7rem 1.8rem; /* Smaller button */
+    font-size: 0.95rem;
+  }
+
+  .engagement-card {
+    padding: 1.5rem 1.2rem; /* Reduce padding further */
+  }
+
+  .engagement-icon-wrapper {
+    width: 50px; /* Even smaller */
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .engagement-card h4 {
+    font-size: 1rem;
+  }
+
+  .engagement-card p {
+    font-size: 0.85rem;
+  }
+}
+
+
 /* ====== ALUMNI SHOWCASE SECTION ====== */
 .alumni-showcase {
-  margin-top: 100px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%), 
               radial-gradient(circle at 20% 80%, rgba(15, 91, 91, 0.05) 0%, transparent 50%), 
               radial-gradient(circle at 80% 20%, rgba(212, 161, 74, 0.05) 0%, transparent 50%);
@@ -5306,6 +5526,7 @@ h1.text-center.mb-5::after {
   color: #1f4d3b;
   position: relative;
   overflow: hidden;
+  padding: 5rem 0; /* Modern touch: Consistent padding */
 }
 
 .alumni-showcase::before {
@@ -5328,17 +5549,13 @@ h1.text-center.mb-5::after {
 .alumni-showcase .section-title {
   font-size: 2.8rem;
   font-weight: 700;
-  color: #0f5b5b;
+  color: #003366; /* Consistent with theme */
   position: relative;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-
-  /* Centering */
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 2rem; /* Modern touch: Better spacing */
   display: block;
 }
-
 
 .alumni-showcase .section-title::after {
   content: '';
@@ -5350,84 +5567,123 @@ h1.text-center.mb-5::after {
   border-radius: 2px;
 }
 
-/* Alumni Cards */
+/* ===== Alumni Card (Refined) ===== */
 .alumni-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease;
   position: relative;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  max-width: 400px;
+  padding: 2.8rem 2.2rem 3.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   overflow: hidden;
-}
-
-.alumni-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(212, 161, 74, 0.1), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.alumni-card:hover::before {
-  opacity: 1;
+  margin: 0 auto; /* Modern touch: Ensure centering */
 }
 
 .alumni-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.14);
 }
 
+/* Quote watermark */
+.quote-icon {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  font-size: 4rem;
+  color: #1e40af;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Quote text */
+.alumni-quote {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* Divider */
+.alumni-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #d4a14a, transparent);
+  margin: 0 auto 2rem;
+  border-radius: 10px;
+}
+
+/* Image */
 .alumni-img {
   border-radius: 50%;
   border: 4px solid #d4a14a;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .alumni-card:hover .alumni-img {
-  transform: scale(1.1);
-  filter: brightness(1.1);
+  transform: scale(1.08);
 }
 
-.alumni-quote {
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.6;
+/* Bottom accent bar */
+.alumni-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #1e40af, #7c3aed);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.alumni-card:hover .alumni-accent {
+  opacity: 1;
 }
 
 /* What Alumni Help With */
-.alumni-help h3 {
-  padding-top: 120px;
-  color: #0f5b5b;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.alumni-help {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-top: 7rem; /* Consistent spacing */
 }
 
-.alumni-help p {
+.alumni-help h3 {
+  font-weight: 700; /* Fixed: Removed 'px' from font-weight */
+  color: #004599;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center; /* Ensure centering */
+}
+
+.alumni-help > p {
   color: #555;
   font-size: 1rem;
   max-width: 600px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
+  text-align: center; /* Center the description */
 }
 
 .help-list {
-  max-width: 900px;
   margin: 0 auto;
+  display: flex; /* Modern touch: Use flexbox for better centering */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Consistent gap */
 }
 
 .help-item {
   background: rgba(255, 255, 255, 0.8);
+  max-width: 250px;
+  margin: 0 auto; /* Ensure individual centering if needed */
   backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 1.5rem;
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 280px; /* Modern touch: Flex for responsive grid */
 }
 
 .help-item:hover {
@@ -5442,6 +5698,7 @@ h1.text-center.mb-5::after {
 }
 
 .help-item h4 {
+  margin-top: 0.5rem;
   color: #0f5b5b;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
@@ -5470,38 +5727,37 @@ h1.text-center.mb-5::after {
   .alumni-showcase {
     margin-top: 80px;
     background-attachment: scroll; /* Disable parallax for mobile */
+    padding: 3rem 0; /* Reduce padding */
   }
 
   .alumni-showcase .section-title {
     font-size: 2.2rem;
   }
 
-  .network-stats {
-    margin-bottom: 2rem;
-  }
-
-  .stat-item {
-    padding: 1rem;
-  }
-
-  .stat-number {
-    font-size: 1.5rem;
-  }
-
   .alumni-card {
     padding: 1.5rem;
+    max-width: 100%; /* Full width on smaller screens */
   }
 
   .alumni-quote {
     font-size: 0.9rem;
   }
 
+  .alumni-help {
+    padding-top: 4rem; /* Reduce top padding */
+  }
+
   .alumni-help h3 {
     font-size: 1.6rem;
   }
 
+  .help-list {
+    gap: 1rem; /* Smaller gap */
+  }
+
   .help-item {
     padding: 1rem;
+    max-width: 250px; /* Slightly smaller */
   }
 
   .help-icon {
@@ -5510,16 +5766,34 @@ h1.text-center.mb-5::after {
 }
 
 @media (max-width: 480px) {
+  .alumni-showcase {
+    padding: 2rem 0; /* Even smaller padding */
+  }
+
   .alumni-showcase .section-title {
     font-size: 1.8rem;
   }
 
-  .stat-number {
-    font-size: 1.2rem;
+  .alumni-card {
+    padding: 1.2rem;
+  }
+
+  .alumni-quote {
+    font-size: 0.85rem;
   }
 
   .alumni-help h3 {
     font-size: 1.4rem;
+  }
+
+  .help-list {
+    flex-direction: column; /* Stack vertically on very small screens */
+    align-items: center;
+  }
+
+  .help-item {
+    max-width: 100%; /* Full width */
+    padding: 0.8rem;
   }
 
   .help-item h4 {
@@ -5529,11 +5803,14 @@ h1.text-center.mb-5::after {
   .help-item p {
     font-size: 0.8rem;
   }
+
+  .help-icon {
+    font-size: 1.8rem;
+  }
 }
 
 /* ===== ALUMNI ENGAGEMENT SECTION ===== */
 .alumni-engagement {
-  margin-top: 100px;
   background: linear-gradient(135deg, #fff 0%, #f8f9fa 50%, #fff 100%), 
               radial-gradient(circle at 20% 80%, rgba(15, 91, 91, 0.05) 0%, transparent 50%), 
               radial-gradient(circle at 80% 20%, rgba(212, 161, 74, 0.05) 0%, transparent 50%);
@@ -5561,6 +5838,7 @@ h1.text-center.mb-5::after {
 }
 
 .alumni-engagement .section-title {
+  padding-top: 30px;
   font-size: 2.5rem;
   font-weight: 700;
   color: #0F5B5B;
@@ -5586,7 +5864,7 @@ h1.text-center.mb-5::after {
 }
 
 .alumni-engagement .lead {
-  color: #555;
+  color: #003366;
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -5626,6 +5904,7 @@ h1.text-center.mb-5::after {
 
 /* Card Overlay */
 .card-overlay {
+  padding-bottom: 30px;
   position: absolute;
   top: 0;
   left: 0;

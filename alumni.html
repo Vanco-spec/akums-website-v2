@@ -27,19 +27,49 @@
 <!-- Header with Navbar (updated: floating, rounded, partial width) -->
 <header id="site-header"><!-- navbar will render into this --></header>
 
-<!-- ====== JOIN ALUMNI NETWORK SECTION ====== -->
-<section class="join-alumni-section text-center text-white fade-in">
-  <div class="overlay"></div>
-  <div class="container position-relative z-2">
-    <h2 class="fw-bold mb-3 animate-up">Stay Connected With AKUMS Alumni</h2>
-    <p class="lead mb-4 animate-up delay-1">
-      Wherever your medical journey takes you — across Kenya or beyond —  
-      remain part of our growing <strong>AKUMS alumni family.</strong>  
-      Inspire, mentor, and give back to the next generation.
+
+<!-- ===== ALUMNI HERO SECTION ===== -->
+<section class="alumni-hero position-relative overflow-hidden text-white">
+  <!-- Background pattern -->
+  <div class="alumni-pattern"></div>
+
+  <div class="container alumni-content text-center">
+    <!-- Icon -->
+    <div class="alumni-icon fade-up">
+      <i class="bi bi-mortarboard-fill"></i>
+    </div>
+
+    <h1 class="fade-up delay-1">
+      Association of Kenyatta University Medicine Students Alumni
+    </h1>
+
+    <p class="alumni-subtitle fade-up delay-2">
+      Connecting generations of healthcare professionals who are making a difference
+      in communities around the world. Join our thriving network of accomplished
+      medical practitioners, researchers, and healthcare leaders.
     </p>
-    <a href="signup.html" class="btn btn-lg join-btn mt-3 animate-up delay-2">
-      <i class="bi bi-people-fill me-2"></i> Join the Alumni Network
-    </a>
+
+    
+    <!-- Stats -->
+      <div class="col-md-12">
+        <div class="stat-card">
+          <i class="bi bi-mortarboard"></i>
+          <h3>25+</h3>
+          <p>Years of Legacy</p>
+        </div>
+      </div>
+
+
+  </div>
+
+  <!-- Wave Divider -->
+  <div class="alumni-wave">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path
+        d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120Z"
+        fill="#ffffff"
+      />
+    </svg>
   </div>
 </section>
 
@@ -47,73 +77,126 @@
 <section class="alumni-showcase py-5 text-center" aria-labelledby="alumni-title">
   <div class="container">
     <!-- Intro -->
-    <h2 id="alumni-title" class="section-title fade-up">AKUMS Alumni Network</h2>
+    <h2 id="alumni-title" class="section-title fade-up">AKUMS ALUMNI NETWORK</h2>
     <p class="lead text-muted mx-auto mb-5 fade-up" style="max-width: 700px;">
-      Our alumni are transforming healthcare globally — leading, innovating, and mentoring the next generation. Join a vibrant community of over 500 professionals across 20+ countries.
+      Our alumni are transforming healthcare globally — leading, innovating, and mentoring the next generation.Hear from our accomplished alumni about their experiences and the impact of the <strong>AKUMS</strong> community on their professional journeys.
     </p>
 
-    <!-- Alumni Highlights -->
-    <div class="row g-4 justify-content-center mb-5">
-      <!-- Card 1 -->
-      <div class="col-md-4 fade-up">
-        <div class="alumni-card p-4 h-100 text-center">
-          <img src="/assets/images/personholder.jpg" alt="Dr. Jane Mwangi - Medical Officer" class="alumni-img mb-3" width="110" height="110" loading="lazy">
-          <h5 class="fw-semibold">Dr. Jane Mwangi</h5>
-          <p class="small text-muted mb-2">Medical Officer | Class of 2018</p>
-          <p class="alumni-quote fst-italic">
-            “AKUMS shaped my confidence to lead and serve. I now mentor young women in healthcare across Kenya.”
-          </p>
-        </div>
+    <div class="row justify-content-center g-4">
+  <div class="col-md-4 fade-up">
+    <div class="alumni-card h-100 text-center">
+      
+      <!-- Quote Icon -->
+      <div class="quote-icon">
+        <i class="bi bi-quote"></i>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4 fade-up">
-        <div class="alumni-card p-4 h-100 text-center">
-          <img src="/assets/images/personholder.jpg" alt="Dr. Kevin Oduor - Research Scientist" class="alumni-img mb-3" width="110" height="110" loading="lazy">
-          <h5 class="fw-semibold">Dr. Kevin Oduor</h5>
-          <p class="small text-muted mb-2">Research Scientist | Class of 2019</p>
-          <p class="alumni-quote fst-italic">
-            “Through AKUMS mentorship, I discovered my path in research and global public health.”
-          </p>
-        </div>
-      </div>
+      <!-- Quote FIRST -->
+      <p class="alumni-quote">
+        “AKUMS shaped my confidence to lead and serve. I now mentor young women in healthcare across Kenya.”
+      </p>
 
-      <!-- Card 3 -->
-      <div class="col-md-4 fade-up">
-        <div class="alumni-card p-4 h-100 text-center">
-          <img src="/assets/images/personholder.jpg" alt="Dr. Faith Kamau - Medical Director" class="alumni-img mb-3" width="110" height="110" loading="lazy">
-          <h5 class="fw-semibold">Dr. Faith Kamau</h5>
-          <p class="small text-muted mb-2">Medical Director | Class of 2020</p>
-          <p class="alumni-quote fst-italic">
-            “AKUMS taught me to lead with empathy. It’s still my professional home years later.”
-          </p>
-        </div>
-      </div>
+      <!-- Divider -->
+      <div class="alumni-divider"></div>
+
+      <!-- Author -->
+      <img src="/assets/images/personholder.jpg"
+          alt="Dr. Jane Mwangi"
+          class="alumni-img"
+          width="96" height="96" loading="lazy">
+
+      <h5 class="fw-semibold mt-3">Dr. Jane Mwangi</h5>
+      <p class="small text-muted">Medical Officer · Class of 2018</p>
+
+      <!-- Bottom Accent -->
+      <div class="alumni-accent"></div>
     </div>
+  </div>
+   
+  <div class="col-md-4 fade-up">
+    <div class="alumni-card h-100 text-center">
+      
+      <!-- Quote Icon -->
+      <div class="quote-icon">
+        <i class="bi bi-quote"></i>
+      </div>
+
+      <!-- Quote FIRST -->
+      <p class="alumni-quote">
+        “AKUMS shaped my confidence to lead and serve. I now mentor young women in healthcare across Kenya.”
+      </p>
+
+      <!-- Divider -->
+      <div class="alumni-divider"></div>
+
+      <!-- Author -->
+      <img src="/assets/images/personholder.jpg"
+          alt="Dr. Jane Mwangi"
+          class="alumni-img"
+          width="96" height="96" loading="lazy">
+
+      <h5 class="fw-semibold mt-3">Dr. Jane Mwangi</h5>
+      <p class="small text-muted">Medical Officer · Class of 2018</p>
+
+      <!-- Bottom Accent -->
+      <div class="alumni-accent"></div>
+    </div>
+  </div>
+ 
+  <div class="col-md-4 fade-up">
+    <div class="alumni-card h-100 text-center">
+      
+      <!-- Quote Icon -->
+      <div class="quote-icon">
+        <i class="bi bi-quote"></i>
+      </div>
+
+      <!-- Quote FIRST -->
+      <p class="alumni-quote">
+        “AKUMS shaped my confidence to lead and serve. I now mentor young women in healthcare across Kenya.”
+      </p>
+
+      <!-- Divider -->
+      <div class="alumni-divider"></div>
+
+      <!-- Author -->
+      <img src="/assets/images/personholder.jpg"
+          alt="Dr. Jane Mwangi"
+          class="alumni-img"
+          width="96" height="96" loading="lazy">
+
+      <h5 class="fw-semibold mt-3">Dr. Jane Mwangi</h5>
+      <p class="small text-muted">Medical Officer · Class of 2018</p>
+
+      <!-- Bottom Accent -->
+      <div class="alumni-accent"></div>
+    </div>
+  </div>
+  </div>
 
     <!-- What Alumni Help With -->
-    <div class="alumni-help fade-up">
-      <h3>What Alumni Help With</h3>
+    <div class="alumni-help fade-up text-center">
+      <h3>What Alumni assist with</h3>
       <p class="mb-4">Our alumni play a vital role in supporting AKUMS, contributing their expertise and resources to empower current students.</p>
       <div class="help-list row g-4 justify-content-center">
         <div class="col-md-4">
           <div class="help-item">
             <i class="bi bi-person-check-fill help-icon"></i>
-            <h4>Mentorship</h4>
+            <h4>MENTORSHIP</h4>
             <p>Guiding students through career advice, internships, and personal development.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="help-item">
             <i class="bi bi-calendar-event-fill help-icon"></i>
-            <h4>Event Support</h4>
+            <h4>EVENT SUPPORT</h4>
             <p>Speaking at seminars, workshops, and networking events to share real-world insights.</p>
           </div>
         </div>
         <div class="col-md-4">
           <div class="help-item">
             <i class="bi bi-cash-coin help-icon"></i>
-            <h4>Donations & Sponsorships</h4>
+            <h4>DONATIONS & SPONSORSHIPS</h4>
             <p>Funding scholarships, resources, and initiatives to sustain our mission.</p>
           </div>
         </div>
@@ -174,69 +257,59 @@
 </section>
 <!-- ====== END COMING SOON SECTION ====== -->
 
-
 <!-- ====== ALUMNI ENGAGEMENT SECTION ====== -->
-<section class="alumni-engagement py-5 text-center" aria-labelledby="engagement-title">
-  <div class="container">
-    <h2 id="engagement-title" class="section-title mb-4 text-primary fw-bold fade-up">
+<section class="alumni-engagement py-5" aria-labelledby="engagement-title">
+  <div class="container text-center">
+
+    <!-- Title -->
+    <h2 id="engagement-title" class="section-title fade-up" style="color: #003366;">
       Stay Connected & Make an Impact
     </h2>
-    <p class="lead text-muted mb-5 fade-up" style="max-width: 700px; margin: 0 auto;">
+
+    <p class="lead text-muted mx-auto mb-4 fade-up" style="max-width: 720px;">
       Once a member, always part of the AKUMS family.  
       Reconnect, mentor, and give back — together we shape the future of medicine.
     </p>
 
-    <div class="row g-4 justify-content-center">
-      <!-- Mentorship -->
-      <div class="col-md-4 fade-up">
-        <div class="engagement-card p-4 h-100">
-          <div class="card-overlay"></div>
-          <i class="bi bi-person-lines-fill fs-1 text-primary mb-3 engagement-icon"></i>
-          <h5 class="fw-semibold mb-2">Mentorship</h5>
-          <p class="text-muted small mb-3">
-            Guide current students through career advice, internships, and personal development.
-          </p>
-          <a href="#" class="btn btn-outline-primary btn-sm mt-2 engagement-btn" aria-label="Join as a mentor">
-            <i class="bi bi-person-plus me-1"></i> Join as a Mentor
-          </a>
-        </div>
-      </div>
+    <!-- Primary CTA (NOW ABOVE) -->
+    <div class="mb-5 fade-up">
+      <a href="alumni-participate.html"
+         class="btn btn-primary btn-lg rounded-pill shadow-sm engagement-main-btn">
+        <i class="bi bi-hand-index-thumb me-2"></i> Get Involved
+      </a>
+    </div>
 
-      <!-- Events & Networking -->
-      <div class="col-md-4 fade-up">
-        <div class="engagement-card p-4 h-100">
-          <div class="card-overlay"></div>
-          <i class="bi bi-calendar-event fs-1 text-success mb-3 engagement-icon"></i>
-          <h5 class="fw-semibold mb-2">Events & Networking</h5>
-          <p class="text-muted small mb-3">
-            Stay connected through reunions, conferences, and outreach programs across the country.
+    <!-- Cards -->
+    <div class="row justify-content-center g-4">
+
+      <!-- Mentorship -->
+      <div class="col-md-5 fade-up">
+        <div class="engagement-card h-100">
+          <div class="engagement-icon-wrapper mentorship">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <h4>Mentorship</h4>
+          <p>
+            Guide medical students through career decisions, internships, 
+            leadership growth, and the realities of professional practice.
           </p>
-          <a href="events.html" class="btn btn-outline-success btn-sm mt-2 engagement-btn" aria-label="See upcoming events">
-            <i class="bi bi-calendar-check me-1"></i> See Upcoming Events
-          </a>
         </div>
       </div>
 
       <!-- Giving Back -->
-      <div class="col-md-4 fade-up">
-        <div class="engagement-card p-4 h-100">
-          <div class="card-overlay"></div>
-          <i class="bi bi-heart-fill fs-1 text-danger mb-3 engagement-icon"></i>
-          <h5 class="fw-semibold mb-2">Giving Back</h5>
-          <p class="text-muted small mb-3">
-            Support AKUMS through scholarships, sponsorships, or collaborative projects that inspire impact.
+      <div class="col-md-5 fade-up">
+        <div class="engagement-card h-100">
+          <div class="engagement-icon-wrapper giving">
+            <i class="bi bi-heart-fill"></i>
+          </div>
+          <h4>Giving Back</h4>
+          <p>
+            Support AKUMS through scholarships, sponsorships, 
+            and collaborative initiatives that uplift future doctors.
           </p>
-          <a href="contact.html" class="btn btn-outline-danger btn-sm mt-2 engagement-btn" aria-label="Partner with us">
-            <i class="bi bi-hand-heart me-1"></i> Partner with Us
-          </a>
         </div>
       </div>
-    </div>
 
-    <div class="text-center mt-5 fade-up">
-      <a href="alumni-participate.html" class="btn btn-primary btn-lg rounded-pill shadow-sm main-cta" aria-label="Get involved with alumni">
-        <i class="bi bi-hand-index-thumb me-2"></i> Get Involved
-      </a>
     </div>
   </div>
 </section>
