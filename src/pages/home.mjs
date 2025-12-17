@@ -1,5 +1,7 @@
-export function init() {
+import { db } from '../firebase.mjs'; // your Firestore instance
+import { collection, addDoc } from 'firebase/firestore';
 
+export function init() {
 
 function hideLoader() {
   const loader = document.getElementById("loader");
@@ -138,4 +140,47 @@ document.querySelectorAll('.fade-hall').forEach(el => observer.observe(el));
     { threshold: 0.2 }
   );
   fadeZoomEls.forEach(el => fadeZoomObserver.observe(el));
+
+  // ===== NEWSLETTER FORM HANDLING =====
+const newsletterForm = document.querySelector('.newsletter-form');
+
+if (newsletterForm) {
+  newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const emailInput = newsletterForm.querySelector('.newsletter-input');
+    const email = emailInput.value.trim();
+
+    // Check if input is empty
+    if (!email) {
+      alert("Please enter your email.");
+      emailInput.focus();
+      return;
+    }
+
+    // Check if input contains @gmail.com
+    if (!email.endsWith("@gmail.com")) {
+      alert("Please enter a valid Gmail address (e.g., example@gmail.com).");
+      emailInput.focus();
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "newsletterSubscribers"), {
+        email: email,
+        timestamp: new Date()
+      });
+
+      // Success feedback
+      alert("Thank you for subscribing to our news letter!");
+      newsletterForm.reset();
+
+    } catch (error) {
+      console.error("Error adding email: ", error);
+      alert("Subscription failed. Please try again later.");
+    }
+  });
 }
+
+}
+

@@ -9,8 +9,8 @@ const NAV_HTML = (isLoggedIn) => `
       <div class="container-fluid px-3">
         <a class="navbar-brand d-flex align-items-center" href="/index.html">
           <img  src="/assets/images/logo.png" height="36" class="me-2" alt=" " loading="lazy">
-          <span class="navbar-text text-wrap text-dark">
-            Association of Kenyatta University Medicine Students
+          <span class="navbar-text text-wrap text-light">
+            ASSOCIATION OF KENYATTA UNIVERSITY MEDICINE STUDENTS
           </span>
         </a>
 
@@ -35,13 +35,7 @@ const NAV_HTML = (isLoggedIn) => `
             </li>
             <li class="nav-item"><a class="nav-link" href="/alumni.html">ALUMNI</a></li>
             <li class="nav-item"><a class="nav-link" href="/about_us.html">ABOUT US</a></li>
-            ${
-              !isLoggedIn
-                ? `<li class="nav-item"><a class="nav-link" href="/login.html">LOGIN</a></li>
-                   <li class="nav-item"><a class="nav-link" href="/signup.html">SIGN UP</a></li>`
-                : `<li class="nav-item"><a class="nav-link" id="dashboard-link" href="#">DASHBOARD</a></li>
-                   <li class="nav-item"><a id="logout-link" class="nav-link text-danger fw-bold" href="#">LOGOUT</a></li>`
-            }
+            
           </ul>
         </div>
       </div>
@@ -50,32 +44,23 @@ const NAV_HTML = (isLoggedIn) => `
 `;
 
 // ====== INIT NAVBAR ======
+// ====== INIT NAVBAR (NO AUTH VERSION) ======
 export function initNavbar() {
   const header = document.getElementById("site-header");
   if (!header) return;
 
+  // Show skeleton loader
   showNavbarSkeleton(header);
 
-  // Render cached state instantly
-  const cachedLogin = localStorage.getItem("isLoggedIn") === "true";
-  header.innerHTML = NAV_HTML(cachedLogin);
+  // Render navbar immediately (no auth state needed)
+  header.innerHTML = NAV_HTML(false);  // or NAV_HTML() if it doesn't need params
 
-  // Listen for Firebase auth changes
-  onAuthStateChanged(auth, (user) => {
-    const isLoggedIn = !!user;
-    header.innerHTML = NAV_HTML(isLoggedIn);
+  // Attach normal navbar behaviors
 
-    if (isLoggedIn) localStorage.setItem("isLoggedIn", "true");
-    else {
-      localStorage.removeItem("isLoggedIn");
-      localStorage.removeItem("userRole");
-    }
-
-    attachDynamicLinks();
-    setActiveNavLink();
-    initNavbarScroll();
-  });
+  setActiveNavLink();
+  initNavbarScroll();
 }
+
 
 // ====== SKELETON LOADING ======
 function showNavbarSkeleton(header) {
@@ -156,34 +141,6 @@ function initNavbarScroll() {
   if ((window.scrollY || 0) < HIDE_AFTER) wrapper.classList.remove("nav-hidden");
 }
 
-// ====== DYNAMIC BUTTON HANDLERS ======
-function attachDynamicLinks() {
-  const logoutEl = document.getElementById("logout-link");
-  if (logoutEl) {
-    logoutEl.addEventListener("click", async (e) => {
-      e.preventDefault();
-      try {
-        await signOut(auth);
-        localStorage.removeItem("isLoggedIn");
-        localStorage.removeItem("userRole");
-        window.location.href = "/index.html";
-      } catch (err) {
-        console.error("Sign out error", err);
-      }
-    });
-  }
-
-  const dashboardEl = document.getElementById("dashboard-link");
-  if (dashboardEl) {
-    dashboardEl.addEventListener("click", (e) => {
-      e.preventDefault();
-      const role = localStorage.getItem("userRole");
-      if (role === "student") window.location.href = "/student-dashboard.html";
-      else if (role === "sponsor") window.location.href = "/sponsor-dashboard.html";
-      else window.location.href = "/visitor-dashboard.html";
-    });
-  }
-}
 
 // Smooth dropdown hide animation
 document.addEventListener("hide.bs.dropdown", (e) => {

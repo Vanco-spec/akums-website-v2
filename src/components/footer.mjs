@@ -39,16 +39,16 @@ export function initFooter() {
            <p class="small footer-p mb-3"><i class="bi bi-telephone-fill me-2"></i>+254 700 000 000</p>
 <br><br><br>
            <div class="social-icons">
-             <a href="https://www.instagram.com/a.k.u.m.s_ku?igsh=MXdmbTVldjl4MmJxZg=="><i class="bi bi-instagram"></i></a>
-             <a href="https://www.tiktok.com/@akums.ku?_r=1&_t=ZM-91aoCHecs04"><i class="bi bi-tiktok"></i></a>
-             <a href="https://x.com/Akums_KU?s=09"><i class="bi bi-twitter-x"></i></a>
-             <a href="https://www.linkedin.com/company/the-association-of-kenyatta-university-medical-students/"><i class="bi bi-linkedin"></i></a>
+             <a href="https://www.instagram.com/a.k.u.m.s_ku?igsh=MXdmbTVldjl4MmJxZg==" target="_blank"><i class="bi bi-instagram"></i></a>
+             <a href="https://www.tiktok.com/@akums.ku?_r=1&_t=ZM-91aoCHecs04" target="_blank"><i class="bi bi-tiktok"></i></a>
+             <a href="https://x.com/Akums_KU?s=09"><i class="bi bi-twitter-x" target="_blank"></i></a>
+             <a href="https://www.linkedin.com/company/the-association-of-kenyatta-university-medical-students/" target="_blank"><i class="bi bi-linkedin"></i></a>
              <a href="https://linktr.ee/AKUMS.KU" target="_blank" aria-label="Linktree">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M11.993 2a1.3 1.3 0 0 1 1.3 1.3v3.71l2.63-2.63a1.3 1.3 0 1 1 1.84 1.84l-4.47 4.47v10.01a1.3 1.3 0 1 1-2.6 0V10.7L6.23 6.05a1.3 1.3 0 0 1 1.84-1.84l2.63 2.63V3.3A1.3 1.3 0 0 1 11.993 2z"/>
               </svg>
             </a>
-            <a href="mailto:Akumssecretariat@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+            <a href="mailto:Akumssecretariat@gmail.com" target="_blank"><i class="bi bi-envelope-fill"></i></a>
            </div>
          </div>
        </div>
