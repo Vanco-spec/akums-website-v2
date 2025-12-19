@@ -522,7 +522,6 @@ nav.navbar {
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Shadow effect when scrolling */
@@ -531,7 +530,7 @@ nav.navbar.scrolled {
 }
 
 /* Brand Styling */
-nav .navbar-brand {
+nav .navbar-text {
   color: #fff !important;
   font-weight: 800;
   font-size: 1.25rem;
@@ -543,10 +542,6 @@ nav .navbar-brand {
   white-space: normal;
   word-break: keep-all;
   width: auto;
-}
-
-nav .navbar-brand:hover {
-  color: #0066cc !important;
 }
 
 /* Mobile toggle button styling */
@@ -598,13 +593,10 @@ nav .navbar-brand:hover {
   transform: translateY(-2px);
 }
 
-.navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(15, 91, 91, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
 /* Brand tweaks - Abbreviated to AKUMS */
-.floating-navbar .navbar-brand .brand-text {
+.floating-navbar .navbar-brand .nav-text {
   font-size: 1.05rem;
+  display: inline-block;
   font-weight: 700;
   color: #fff;
   white-space: nowrap;
@@ -613,7 +605,7 @@ nav .navbar-brand:hover {
   max-width: 400px;
 }
 
-.floating-navbar .navbar-brand .brand-text::before {
+.floating-navbar .navbar-brand .nav-text::before {
   content: "AKUMS"; /* Abbreviated brand name */
   display: inline;
 }
@@ -722,6 +714,15 @@ nav .navbar-brand:hover {
 /* Remove Bootstrap dropdown caret */
 .floating-navbar .dropdown-toggle::after {
   display: none !important;
+}
+
+/* Lock dropdown position for hover AND click */
+.floating-navbar .dropdown-menu,
+.floating-navbar .dropdown-menu.show {
+  top: 107%;
+  left: -15%;
+  transform: none !important;
+  margin-top: 24px;
 }
 
 /* Auth Links (Login / Sign Up) */
@@ -846,9 +847,10 @@ nav .navbar-brand:hover {
     padding: 10px 14px;
   }
 
-  .floating-navbar .brand-text {
+  .floating-navbar .navbar-text {
     font-size: 1rem;
     max-width: 250px;
+    text-align: center;
   }
 
   .floating-navbar .nav-link {
@@ -897,8 +899,18 @@ nav .navbar-brand:hover {
     padding: 8px 12px;
   }
 
-  .floating-navbar .brand-text {
+  .floating-navbar .navbar-text {
     display: none; /* Hide to save space */
+  }
+
+    .floating-navbar .navbar-brand::after {
+    content: "AKUMS";
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-left: 80px;
+    margin-bottom: 12px;
   }
 
   .floating-navbar .nav-item {
@@ -979,6 +991,11 @@ nav .navbar-brand:hover {
 
   .floating-navbar {
     padding: 4px 8px;
+  }
+
+  .floating-navbar .navbar-text::after {
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
   }
 
   .floating-navbar .nav-link {
