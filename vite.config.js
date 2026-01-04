@@ -19,6 +19,8 @@ export default defineConfig({
         alumni: '/alumni.html',
         aboutus: '/about_us.html',
         leaders: '/leaders.html',
+        scorp: '/scorp.html',
+        constitution: '/constitution.html'
       },
     },
   },
