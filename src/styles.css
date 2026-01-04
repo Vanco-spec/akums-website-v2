@@ -2854,9 +2854,9 @@ hr {
   }
 }
 
-/*event page */
+/*EVENT PAGE CSS */
 #carousel-section {
-  margin-top: 90px;
+  margin-top: 60px;
   width: 100%;
   height: 90%;
   min-height: 400px; /* adjust height */
@@ -3351,11 +3351,11 @@ h1.text-center.mb-5::after {
   z-index: 1;
   width: 100%;
   max-width: 1000px;
-    background: #fff;
+  background: #fff;
 }
 
 .sponsor-box {
-  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 50%, #1d4ed8 100%);
   backdrop-filter: blur(25px); /* Glassmorphism effect */
   border: 7px solid rgba(0, 0, 0, 0.2);
   padding: 50px;
@@ -3387,7 +3387,7 @@ h1.text-center.mb-5::after {
 
 /* Invite Header */
 .invite-header h2 {
-  color: #081F33;
+  color: #fff;
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -3395,7 +3395,7 @@ h1.text-center.mb-5::after {
 }
 
 .invite-subtitle {
-  color: #081F33;
+  color: #fff;
   font-size: 1.1rem;
   line-height: 1.7;
   max-width: 800px;
@@ -3416,7 +3416,7 @@ h1.text-center.mb-5::after {
 }
 
 .benefits-list li {
-  color: #081F33;
+  color: #fff;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
@@ -3442,7 +3442,7 @@ h1.text-center.mb-5::after {
 }
 
 .testimonial-badge em {
-  color: #081F33;
+  color: #fff;
   font-size: 1rem;
   display: block;
   margin-bottom: 0.5rem;
@@ -3541,7 +3541,7 @@ h1.text-center.mb-5::after {
 }
 
 .volunteer-text {
-  color: #081F33;
+  color: #fff;
   font-size: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -4601,10 +4601,11 @@ h1.text-center.mb-5::after {
 .alumni-stats {
   padding-top: 30px;
   margin-top: 8rem;
+
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.12);
+  background: transparent;
   backdrop-filter: blur(6px);
   border-radius: 12px;
   padding: 2.2rem 1.8rem;
@@ -5741,8 +5742,8 @@ html {
 
 /* Hero container */
 .about-hero {
-    background: url("../assets/images/aboutherojpg.jpg") no-repeat center -10% / cover;
-     background-attachment: fixed; 
+  background: url("../assets/images/logo.png") no-repeat center -10% / cover;
+  background-attachment: fixed; 
   position: relative;
   height: 80vh;
   color: var(--white);
@@ -5888,10 +5889,9 @@ html {
 }
 
 .who-we-are .section-title {
-  color: #004599;
+  color: #003366;
   font-size: 2.3rem;
   font-weight: 700;
-  color: var(--primary, #0F5B5B);
   position: relative;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -5908,12 +5908,13 @@ html {
 }
 
 .who-we-are p {
+  font-weight: 500px;
   line-height: 1.8;
   margin-bottom: 1.5rem;
 }
 
 .who-we-are strong {
-  color: var(--primary, #0F5B5B);
+  color: #003366;
 }
 
 .who-we-are .who-image {
@@ -5969,7 +5970,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 .akums-traditions .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--primary, #0F5B5B);
+  color: #003366;
   position: relative;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -6117,7 +6118,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 }
 
 .about-navigation .section-title {
-  color: var(--primary, #0F5B5B);
+  color: #003366;
   font-weight: 700;
   padding-bottom: 50px;
 }
@@ -6155,6 +6156,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 }
 
 .about-navigation .nav-card h5 {
+  color: #003366;
   margin: 0;
   font-size: 1.1rem;
   font-weight: 600;
@@ -6988,14 +6990,15 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 }
 /* ====== CONSTITUTION SECTION ====== */
 .constitution-section {
-  margin-top: 100px;
+  height: 106vh;
+  margin-top: 70px;
   background: linear-gradient(180deg, #fdfdfd 0%, #f7fafa 100%);
   color: #333;
   padding: 60px 0; /* Added padding for better spacing */
 }
 
 .constitution-section .section-title {
-  color: var(--primary, #0F5B5B);
+  color: #004599;
   font-weight: 700;
   position: relative;
   font-size: 2.5rem; /* Base font size */
@@ -7084,7 +7087,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 /* Tablets (≤992px) */
 @media (max-width: 992px) {
   .constitution-section {
-    margin-top: 80px;
+    margin-top: 70px;
     padding: 50px 0;
   }
 
@@ -7212,7 +7215,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 #leaders-section {
   background: #fff; 
   color: #333; 
-  margin-top: 100px; 
+  margin-top: 90px; 
   min-height: 85vh; /* ensures at least 85% of viewport height on larger screens */
   padding-bottom: 50px; /* optional: spacing at bottom */
 }
@@ -7305,7 +7308,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 /* Tablets (≤992px) */
 @media (max-width: 992px) {
   #leaders-section {
-    margin-top: 100px;
+    margin-top: 80px;
     min-height: 70vh; /* Reduce height for tablets */
     padding-bottom: 40px;
   }
@@ -7334,7 +7337,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
   #leaders-section {
-    margin-top: 80px;
+    margin-top: 100px;
     min-height: auto; /* Allow dynamic height on mobile */
     padding-bottom: 30px;
   }
@@ -7363,7 +7366,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 /* Small Phones (≤576px) */
 @media (max-width: 576px) {
   #leaders-section {
-    margin-top: 60px;
+    margin-top: 125px;
     padding-bottom: 20px;
   }
 
@@ -7401,7 +7404,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 /* Very Small Phones (≤480px) */
 @media (max-width: 480px) {
   #leaders-section {
-    margin-top: 60px;
+    margin-top: 145px;
     padding-bottom: 20px;
   }
 
