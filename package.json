@@ -21,7 +21,9 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
-    "firebase": "^12.4.0"
+    "firebase": "^12.4.0",
+    "page-flip": "^2.0.7",
+    "pdfjs-dist": "^5.4.530"
   },
   "devDependencies": {
     "@vercel/static-build": "^2.8.6",

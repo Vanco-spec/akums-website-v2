@@ -69,11 +69,13 @@
           </p>
 
           <div class="d-flex align-items-center flex-wrap gap-2">
-            <a href="/documents/AKUMS_Constitution.pdf" target="_blank" class="btn btn-primary">
-              <i class="bi bi-file-earmark-text me-1"></i> View
-            </a>
+            <button class="btn btn-outline-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#constitutionModal">
+              📘 View AKUMS Constitution
+            </button>
 
-            <a href="/documents/AKUMS_Constitution.pdf" download class="btn btn-outline-gold">
+            <a href="/public/documents/AKUMS CONSTITUTION Draft 2 of 2025.pdf" download class="btn btn-outline-gold">
               <i class="bi bi-download me-1"></i> Download
             </a>
           </div>
@@ -83,8 +85,36 @@
   </div>
 </section>
 
-<!-- Footer placeholder -->
-<div id="site-footer"></div>
+
+<!-- Hidden container for constitution pages -->
+<div id="pages-holder" style="display:none;"></div>
+
+
+<div class="modal fade" id="constitutionModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen modal-dialog-centered">
+    <div class="modal-content bg-dark">
+
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title text-white">AKUMS CONSTITUTION</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body p-0">
+        <div class="constitution-wrapper">
+          <div id="book" class="book-container"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Footer placeholder -->
+  <div id="site-footer"></div>
 
   <!-- Scripts -->
   <script type="module" src="/src/main.mjs"></script>

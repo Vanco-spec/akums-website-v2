@@ -1,5 +1,6 @@
 import { db } from '../firebase.mjs'; // your Firestore instance
 import { collection, addDoc } from 'firebase/firestore';
+import 'animate.css';
 
 export function init() {
 
@@ -32,71 +33,55 @@ window.addEventListener("load", hideLoader);
     bgImage.onload = () => heroSection.classList.add("hero-loaded");
   }
 
+  // ===== EVENT CARD ANIMATION (animate.css) =====
+  const eventCards = document.querySelectorAll(".event-card");
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(
+            "animate__animated",
+            "animate__fadeInUp"
+          );
+
+          entry.target.style.opacity = "1";
+          entry.target.style.transform = "translateY(0)";
+
+          obs.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  eventCards.forEach(card => observer.observe(card));
+
+      // ===== PURE FADE-IN (NO SLIDE) =====
+    const fadeOnlyEls = document.querySelectorAll(".fade-only");
+
+    const fadeObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              "animate__animated",
+              "animate__fadeIn"
+            );
+
+            entry.target.style.opacity = "1";
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    fadeOnlyEls.forEach(el => fadeObserver.observe(el));
+
+
 // ===== NEW IMPACT RING ANIMATION =====
 
-// Get elements ONCE at the top
-const impactStats = document.querySelector('#impact-stats');
-const skeleton = document.getElementById("impact-skeleton");
-
-// Remove skeleton + show stats BEFORE observing
-if (skeleton && impactStats) {
-  skeleton.classList.add("d-none");
-  impactStats.classList.remove("d-none");
-}
-
-function animateStats() {
-  const stats = document.querySelectorAll('.stat-ring');
-  stats.forEach(stat => {
-    const target = parseInt(stat.dataset.target);
-    const numberEl = stat.querySelector('.stat-number');
-    const progressEl = stat.querySelector('.ring-progress');
-
-    let current = 0;
-    const increment = target / 100;
-
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-
-      numberEl.textContent = Math.floor(current);
-      const progress = (current / target) * 100;
-      progressEl.style.setProperty('--progress', `${progress}%`);
-    }, 30);
-  });
-}
-
-// Intersection Observer
-const impactObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      animateStats();
-    }
-  });
-}, { threshold: 0.3 });
-
-// Start observing stats container
-if (impactStats) impactObserver.observe(impactStats);
-
-
-  // ===== TIMELINE ITEMS =====
-  const timelineItems = document.querySelectorAll(".timeline-item");
-  const timelineObserver = new IntersectionObserver(
-    entries => entries.forEach(entry => entry.target.classList.toggle("visible", entry.isIntersecting)),
-    { threshold: 0.15 }
-  );
-  timelineItems.forEach(item => timelineObserver.observe(item));
-
-// Intersection Observer for hall of fame animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
 document.querySelectorAll('.fade-hall').forEach(el => observer.observe(el));
   // ===== FADE-ON-SCROLL ELEMENTS & PARALLAX =====
   const fadeElements = document.querySelectorAll(".fade-on-scroll-left, .fade-on-scroll-right, .fade-item");
@@ -123,8 +108,6 @@ document.querySelectorAll('.fade-hall').forEach(el => observer.observe(el));
       parallaxImg.style.transform = `translateY(${rect.top * speed}px)`;
     }
   };
-
-
   
   window.addEventListener("scroll", onScroll);
   onScroll();

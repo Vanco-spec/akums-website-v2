@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { getFirestore, collection, getDocs, query, orderBy, limit, where } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { firebaseConfig } from "../firebase.mjs";
+import { PageFlip } from 'page-flip';
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -230,3 +231,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeZoomEls.forEach((el) => fadeZoomObserver.observe(el));
 });
+
+
+export async function init() {
+  let pageFlip = null;
+  let pagesLoaded = false;
+
+  const modal = document.getElementById('constitutionModal');
+  const pagesHolder = document.getElementById('pages-holder');
+
+  if (!modal || !pagesHolder) {
+    console.error('Modal or pages-holder not found');
+    return;
+  }
+
+  async function loadPages() {
+    if (pagesLoaded) return;
+
+    const res = await fetch('/public/documents/constitution-pages.html');
+    const html = await res.text();
+
+    pagesHolder.innerHTML = html;
+    pagesLoaded = true;
+  }
+
+  modal.addEventListener('shown.bs.modal', async () => {
+    if (pageFlip) return;
+
+    await loadPages();
+
+    const book = document.getElementById('book');
+    if (!book) {
+      console.error('Book container not found');
+      return;
+    }
+
+    const pages = pagesHolder.querySelectorAll('.page');
+    if (!pages.length) {
+      console.error('No pages found for PageFlip');
+      return;
+    }
+
+    // Force layout calculation (prevents setDensity crash)
+    book.getBoundingClientRect();
+
+    pageFlip = new PageFlip(book, {
+      width: book.clientWidth,
+      height: book.clientHeight,
+      size: 'stretch',
+      usePortrait: true,
+      showCover: true,
+      mobileScrollSupport: false,
+      minWidth: 320,
+      maxWidth: 1200,
+      minHeight: 400,
+      maxHeight: 1350,
+      showCover: true,
+      drawShadow: true,
+      flippingTime: 700,
+      mobileScrollSupport: true
+    });
+
+    pageFlip.loadFromHTML(pages);
+  });
+
+  modal.addEventListener('hidden.bs.modal', () => {
+    if (pageFlip) {
+      pageFlip.destroy();
+      pageFlip = null;
+    }
+  });
+}

@@ -75,3 +75,4 @@ document.addEventListener('DOMContentLoaded', async () => {
     loader?.classList.add('hidden');
   }
 });
+
