@@ -32,7 +32,7 @@
 <section class="constitution-section py-5">
   <div class="container">
     <h2 class="section-title text-center mb-4">OUR CONSTITUTION</h2>
-    <p class="lead intro-text text-center mb-5">
+    <p class="lead intro-text text-center mb-5" style="font-weight: 500;">
       The <strong>AKUMS Constitution</strong> defines our structure, principles, and governance. It reflects our commitment
       to integrity, representation, and accountability in all our affairs.
     </p>
@@ -49,8 +49,8 @@
       <!-- Text + actions -->
       <div class="col-md-6 ">
         <div class="constitution-card p-4 rounded-4 shadow-sm">
-          <h4 class="fw-bold text-primary mb-3"><i class="bi bi-balance-scale me-2 text-gold"></i>GUIDING PRINCIPLES</h4>
-          <p>
+          <h4 class="fw-bold mb-3" style="color: #1F4FA3"><i class="bi bi-balance-scale me-2 text-gold"></i>GUIDING PRINCIPLES</h4>
+          <p style="font-weight: 500;">
             Every member is encouraged to read and understand the Constitution. It provides the formal framework that governs:
           </p>
 
@@ -63,19 +63,21 @@
             <li><i class="bi bi-check-circle text-gold me-2"></i> Discipline, grievance, and amendment procedures</li>
           </ul>
 
-          <p class="mb-3">
+          <p class="mb-3" style="font-weight: 400;">
             The Constitution ensures transparency, fairness, and continuity. Amendments are made through democratic processes
             and communicated to all members before enactment.
           </p>
 
           <div class="d-flex align-items-center flex-wrap gap-2">
-            <button class="btn btn-outline-primary"
+            <button id="view-constitution-btn"
+                    class="btn"
                     data-bs-toggle="modal"
                     data-bs-target="#constitutionModal">
-              📘 View AKUMS Constitution
+              View AKUMS Constitution
             </button>
 
-            <a href="/public/documents/AKUMS CONSTITUTION Draft 2 of 2025.pdf" download class="btn btn-outline-gold">
+
+            <a href="/public/documents/AKUMS CONSTITUTION FINAL DRAFT.pdf" download class="btn btn-outline-gold">
               <i class="bi bi-download me-1"></i> Download
             </a>
           </div>
@@ -85,33 +87,74 @@
   </div>
 </section>
 
-
-<!-- Hidden container for constitution pages -->
-<div id="pages-holder" style="display:none;"></div>
-
-
-<div class="modal fade" id="constitutionModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="constitutionModal" tabindex="-1" >
   <div class="modal-dialog modal-fullscreen modal-dialog-centered">
     <div class="modal-content bg-dark">
-
-      <!-- Header -->
       <div class="modal-header border-0">
-        <h5 class="modal-title text-white">AKUMS CONSTITUTION</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
+        <h5 class="modal-title text-white" style="font-weight: 500;">AKUMS CONSTITUTION</h5>
+<button
+  id="constitution-close-btn"
+  type="button"
+  data-bs-dismiss="modal"
+  aria-label="Close"
+  style="
+    position: fixed;
+    right: 20px;
+    top: 3.3%;
+    transform: translateY(-50%);
 
-      <!-- Body -->
-      <div class="modal-body p-0">
-        <div class="constitution-wrapper">
-          <div id="book" class="book-container"></div>
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: none;
+
+    background-color: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    z-index: 1060;
+
+    transition: 
+      background-color 0.25s ease,
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  "
+
+  onmouseenter="
+    this.style.backgroundColor='rgba(255,255,255,0.18)';
+    this.style.transform='translateY(-50%) scale(1.12)';
+    this.style.boxShadow='0 0 12px rgba(255,255,255,0.35)';
+  "
+
+  onmouseleave="
+    this.style.backgroundColor='rgba(255,255,255,0.08)';
+    this.style.transform='translateY(-50%) scale(1)';
+    this.style.boxShadow='none';
+  "
+>
+  ✕
+</button>
+
+
+      </div>
+      <div class="modal-body">
+        <div class="book-stage">
+          <div id="pages-holder">
+            <div id="book"></div>
+          </div>
+        </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
-
 
   <!-- Footer placeholder -->
   <div id="site-footer"></div>

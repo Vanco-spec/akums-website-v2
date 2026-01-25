@@ -56,7 +56,7 @@ function renderNavbar(isLoggedIn = false) {
   `;
 
   // Dynamic last two buttons
-    if (!isLoggedIn) {
+  if (!isLoggedIn) {
     const navbar = document.querySelector(".navbar-nav"); // make sure this matches your HTML
 
     // Login link
@@ -79,8 +79,8 @@ function renderNavbar(isLoggedIn = false) {
     signupLi.appendChild(signupA);
     navbar.appendChild(signupLi);
 
-    } else {
-      
+  } else {
+
     // User is logged in — add Dashboard and Logout
     const dashboardLi = document.createElement("li");
     dashboardLi.className = "nav-item";
@@ -232,7 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fadeZoomEls.forEach((el) => fadeZoomObserver.observe(el));
 });
 
-
 export async function init() {
   let pageFlip = null;
   let pagesLoaded = false;
@@ -245,60 +244,94 @@ export async function init() {
     return;
   }
 
+  // Make modal inert by default to avoid focus issues
+  modal.inert = true;
+
   async function loadPages() {
     if (pagesLoaded) return;
 
-    const res = await fetch('/public/documents/constitution-pages.html');
-    const html = await res.text();
-
-    pagesHolder.innerHTML = html;
-    pagesLoaded = true;
+    try {
+      const res = await fetch('/public/documents/constitution-pages.html');
+      if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
+      const html = await res.text();
+      pagesHolder.innerHTML = html;
+      pagesLoaded = true;
+    } catch (error) {
+      console.error('Failed to load constitution pages:', error);
+      const book = pagesHolder.querySelector('#book') || document.getElementById('book');
+      if (book) {
+        book.innerHTML = '<p class="text-white text-center">Error loading constitution pages. Please try again.</p>';
+      }
+    }
   }
 
   modal.addEventListener('shown.bs.modal', async () => {
-    if (pageFlip) return;
+    // Allow interaction now
+    modal.inert = false;
 
+    // Load pages if not loaded
     await loadPages();
 
-    const book = document.getElementById('book');
-    if (!book) {
-      console.error('Book container not found');
-      return;
-    }
-
+    const book = pagesHolder.querySelector('#book');
+    if (!book) return console.error('Book container not found');
+    
     const pages = pagesHolder.querySelectorAll('.page');
     if (!pages.length) {
       console.error('No pages found for PageFlip');
+      book.innerHTML = '<p class="text-white text-center">No pages available.</p>';
       return;
     }
 
-    // Force layout calculation (prevents setDensity crash)
+    // Force layout calculation
     book.getBoundingClientRect();
 
-    pageFlip = new PageFlip(book, {
-      width: book.clientWidth,
-      height: book.clientHeight,
-      size: 'stretch',
-      usePortrait: true,
-      showCover: true,
-      mobileScrollSupport: false,
-      minWidth: 320,
-      maxWidth: 1200,
-      minHeight: 400,
-      maxHeight: 1350,
-      showCover: true,
-      drawShadow: true,
-      flippingTime: 700,
-      mobileScrollSupport: true
-    });
+    const modalDialog = modal.querySelector('.modal-dialog');
+    const modalWidth = modalDialog ? modalDialog.clientWidth : 800;
+    const modalHeight = modalDialog ? modalDialog.clientHeight : 600;
 
-    pageFlip.loadFromHTML(pages);
+    const pageWidth = Math.min(450, modalWidth * 0.45);   // max 450px or half modal width
+    const pageHeight = Math.min(600, modalHeight * 0.85); // max 600px or 85% modal height
+
+    // Initialize PageFlip only if not already created
+    if (!pageFlip) {
+      pageFlip = new PageFlip(book, {
+        width: pageWidth,
+        height: pageHeight,
+        size: 'fixed',
+        showCover: true,
+        usePortrait: true,
+        drawShadow: true,
+        mobileScrollSupport: true,
+        flippingTime: 700,
+        minWidth: 320,
+        maxWidth: 1200,
+        minHeight: 400,
+        maxHeight: 1350
+      });
+
+      pageFlip.loadFromHTML(pages);
+    }
   });
 
   modal.addEventListener('hidden.bs.modal', () => {
+    // Prevent interaction while hidden
+    modal.inert = true;
+
     if (pageFlip) {
       pageFlip.destroy();
       pageFlip = null;
     }
-  });
+   // Clear the pages-holder to force reload next time
+  const pagesHolder = document.getElementById('pages-holder');
+  if (pagesHolder) {
+    pagesHolder.innerHTML = '<div id="book"></div>';
+    pagesLoaded = false; // allow pages to reload next open
+  }
+});
 }
+
+// Ensure DOM is loaded before initializing
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+});
+

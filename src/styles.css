@@ -793,7 +793,7 @@ nav .navbar-text {
 .navbar-toggler {
   border: none;
   outline: none;
-  width: 42px; /* NEW: Reduce width for compactness */
+  width: 40px; /* NEW: Reduce width for compactness */
   height: 32px; /* NEW: Reduce height to match width */
   padding: 4px; /* Reduce padding slightly for smaller size */
 }
@@ -8287,25 +8287,25 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 
 /* ====== CONSTITUTION SECTION ====== */
 .constitution-section {
-  height: 106vh;
-  margin-top: 70px;
+  height: auto; /* Changed from 106vh to auto for flexible height, preventing fixed overflow */
+  margin-top: 60px;
   background: linear-gradient(180deg, #fdfdfd 0%, #f7fafa 100%);
-  color: #333;
-  padding: 60px 0; /* Added padding for better spacing */
+  color: #000;
+  padding: clamp(30px, 5vw, 60px) 0; /* Responsive padding, scales with width */
 }
 
 .constitution-section .section-title {
   color: #004599;
   font-weight: 700;
   position: relative;
-  font-size: 2.5rem; /* Base font size */
-  margin-bottom: 2rem;
+  font-size: clamp(1.3rem, 3vw, 2.3rem); /* Fluid font size */
+  margin-bottom: clamp(1rem, 3vh, 2rem); /* Responsive margin */
 }
 
 .constitution-section .section-title::after {
   content: "";
   display: block;
-  width: 60px;
+  width: clamp(40px, 8vw, 60px); /* Responsive width */
   height: 3px;
   background: #8C6E2F;
   margin: 0.5rem auto 0;
@@ -8317,8 +8317,8 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
   color: #333;
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 8px; /* Added for better aesthetics */
-  padding: 1.5rem; /* Base padding */
+  border-radius: 8px;
+  padding: clamp(0.75rem, 3vw, 1.5rem); /* Responsive padding */
 }
 
 .constitution-card:hover {
@@ -8327,10 +8327,59 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 }
 
 .constitution-list li {
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
+  margin-bottom: clamp(0.35rem, 1vh, 0.5rem); /* Responsive margin */
+  font-size: clamp(0.8rem, 2vw, 0.95rem); /* Fluid font size */
   line-height: 1.5;
 }
+
+/* Modern Constitution Button */
+#view-constitution-btn {
+  background: linear-gradient(135deg, #1F4FA3, #0B2C4A);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px; /* pill shape */
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  box-shadow:
+    0 6px 16px rgba(31, 79, 163, 0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.15);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover effect */
+#view-constitution-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 28px rgba(31, 79, 163, 0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+/* Active / click */
+#view-constitution-btn:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.35) inset;
+}
+
+/* Focus (accessibility-friendly) */
+#view-constitution-btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(31, 79, 163, 0.5),
+    0 10px 28px rgba(31, 79, 163, 0.45);
+}
+
 
 .text-gold {
   color: #8C6E2F !important;
@@ -8341,8 +8390,8 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
   color: #8C6E2F;
   background: transparent;
   transition: all 0.3s ease;
-  padding: 0.5rem 1rem; /* Base padding */
-  font-size: 0.9rem; /* Base font size */
+  padding: clamp(0.25rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 1rem); /* Responsive padding */
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem); /* Fluid font size */
   border-radius: 4px;
 }
 
@@ -8359,7 +8408,7 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
 .gazette-image {
   border: 2px solid rgba(140, 110, 47, 0.15);
   transition: transform 0.4s ease;
-  max-width: 100%; /* Ensure images are responsive */
+  max-width: 100%;
   height: auto;
 }
 
@@ -8379,176 +8428,278 @@ background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
   transform: translateY(0);
 }
 
-.pdf-wrapper {
-  width: 100%;
-  height: calc(100vh - 56px);
+
+/* Container for the book inside the modal - Made fully responsive */
+.book-stage {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1f2428;
+  height: clamp(55vh, 90.5vh, 95vh); /* Fluid height, prevents overflow on small screens */
+  padding: clamp(0.5rem, 2vw, 1.5rem); /* Responsive padding */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+   /* Wood background */
+  background-image: url("../assets/images/wood-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Dark overlay for readability */
+  position: relative;
+  overflow: hidden;
 }
 
-#pdfCanvas {
-  background: #fff;
-  max-width: 100%;
+.book-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* adjust strength */
+  z-index: 0;
+}
+
+
+/* Wrapper around the book for JS PageFlip - Enforces proportionality */
+#pages-holder {
+  width: 100%;
+  height: 100%;
+  max-width: min(1200px, 95vw); /* Responsive max-width, prevents wide overflow */
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 3 / 2; /* Enforces 3:2 ratio for proportional book sizing (adjust if needed) */
+}
+
+/* The actual book container - Scales with holder */
+#book {
+  width: 100%;
+  height: 100%;
+  max-width: 100%; /* Ensures it fits within pages-holder */
   max-height: 100%;
 }
-.modal-content {
+
+/* Each page image - Fully responsive and proportional */
+.page img {
+  width: 100%;
   height: 100%;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  max-width: 100%; /* Extra safeguard for scaling */
+  max-height: 100%;
 }
+
+.modal-header {
+  background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
+}
+
+/* Modal body - Ensures clean, contained layout */
 .modal-body {
-  height: calc(100vh - 56px);
-}
-.book-container {
-  width: min(900px, 90vw);
-  height: min(600px, 80vh);
-}
-
-/* Book pages */
-.page {
-  background: #fdfcf8;
-  color: #111;
-  padding: 48px;
-  font-family: "Georgia", serif;
-  font-size: 17px;
-  line-height: 1.8;
-  box-sizing: border-box;
+     /* Wood background */
+  background-image: url("../assets/images/wood-texture.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden; /* Hides scrollbars for a cleaner look, prevents overlaps */
+  padding: 0; /* Remove default padding to let book-stage fill */
 }
 
-/* Article headings */
-.page h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  font-weight: 600;
+/* Make the close button more visible against dark background */
+.modal-header .btn-close {
+  filter: brightness(1.2);
 }
+
+.modal-header .btn-close:hover {
+  background-color: white;
+  color: #000;
+  filter: brightness(1.5);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Responsive adjustments for book viewing */
+@media (max-width: 768px) {
+  .book-stage {
+    height: clamp(50vh, 85vh, 90vh); /* Reduced height for mobile */
+    padding: clamp(0.25rem, 1.5vw, 1rem); /* Less padding */
+  }
+
+  #pages-holder {
+    max-width: min(1000px, 90vw); /* Narrower on tablets */
+  }
+}
+
 /* Responsive Design */
 
 /* Tablets (≤992px) */
 @media (max-width: 992px) {
   .constitution-section {
-    margin-top: 70px;
-    padding: 50px 0;
+    margin-top: clamp(50px, 4vh, 70px);
+    padding: clamp(40px, 4vw, 50px) 0;
   }
 
   .constitution-section .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
   }
 
   .constitution-section .section-title::after {
-    width: 50px;
+    width: clamp(35px, 7vw, 50px);
   }
 
   .constitution-card {
-    padding: 1.25rem;
+    padding: clamp(0.5rem, 2.5vw, 1.25rem);
   }
 
   .constitution-list li {
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
   }
 
   .btn-outline-gold {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.85rem;
+    padding: clamp(0.2rem, 1.2vw, 0.4rem) clamp(0.4rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.65rem, 1.3vw, 0.85rem);
   }
 
   .gazette-image {
-    /* No specific changes, but ensure it scales */
+    /* Scales automatically with max-width: 100% */
+  }
+
+  /* Book adjustments */
+  .book-stage {
+    height: clamp(60vh, 88vh, 92vh);
+    padding: clamp(0.75rem, 2.5vw, 1.25rem);
+  }
+
+  #pages-holder {
+    max-width: min(1100px, 92vw);
   }
 }
 
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
   .constitution-section {
-    margin-top: 60px;
-    padding: 40px 0;
+    margin-top: clamp(40px, 3vh, 60px);
+    padding: clamp(30px, 3vw, 40px) 0;
   }
 
   .constitution-section .section-title {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin-bottom: clamp(0.75rem, 2vh, 1.25rem);
   }
 
   .constitution-section .section-title::after {
-    width: 45px;
+    width: clamp(30px, 6vw, 45px);
     height: 2.5px;
   }
 
   .constitution-card {
-    padding: 1rem;
+    padding: clamp(0.4rem, 2vw, 1rem);
   }
 
   .constitution-list li {
-    font-size: 0.88rem;
-    margin-bottom: 0.4rem;
+    font-size: clamp(0.7rem, 1.5vw, 0.88rem);
+    margin-bottom: clamp(0.3rem, 0.8vh, 0.4rem);
   }
 
   .btn-outline-gold {
-    padding: 0.375rem 0.75rem;
-    font-size: 0.8rem;
+    padding: clamp(0.15rem, 1vw, 0.375rem) clamp(0.3rem, 1.2vw, 0.75rem);
+    font-size: clamp(0.6rem, 1.2vw, 0.8rem);
   }
 
   .gazette-image:hover {
-    transform: none; /* Disable hover transform on touch devices for better UX */
+    transform: none; /* Disable on touch devices */
+  }
+
+  /* Book adjustments */
+  .book-stage {
+    height: clamp(45vh, 80vh, 85vh);
+    padding: clamp(0.5rem, 1.5vw, 1rem);
+  }
+
+  #pages-holder {
+    max-width: min(900px, 88vw);
   }
 }
 
 /* Small Phones (≤576px) */
 @media (max-width: 576px) {
   .constitution-section {
-    margin-top: 40px;
-    padding: 30px 0;
+    margin-top: clamp(30px, 2.5vh, 40px);
+    padding: clamp(20px, 2.5vw, 30px) 0;
   }
 
   .constitution-section .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    margin-bottom: clamp(0.5rem, 1.5vh, 1rem);
   }
 
   .constitution-section .section-title::after {
-    width: 40px;
+    width: clamp(25px, 5vw, 40px);
     height: 2px;
   }
 
   .constitution-card {
-    padding: 0.75rem;
+    padding: clamp(0.3rem, 1.5vw, 0.75rem);
   }
 
   .constitution-list li {
-    font-size: 0.85rem;
-    margin-bottom: 0.35rem;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    margin-bottom: clamp(0.25rem, 0.6vh, 0.35rem);
   }
 
   .btn-outline-gold {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.75rem;
+    padding: clamp(0.1rem, 0.8vw, 0.3rem) clamp(0.2rem, 1vw, 0.6rem);
+    font-size: clamp(0.55rem, 1vw, 0.75rem);
   }
 
   .gazette-image {
-    border-width: 1px; /* Thinner border for small screens */
+    border-width: 1px;
+  }
+
+  /* Book adjustments */
+  .book-stage {
+    height: clamp(40vh, 75vh, 80vh);
+    padding: clamp(0.25rem, 1vw, 0.75rem);
+  }
+
+  #pages-holder {
+    max-width: min(800px, 85vw);
   }
 }
 
 /* Very Small Phones (≤480px) */
 @media (max-width: 480px) {
   .constitution-section .section-title {
-    font-size: 1.6rem;
+    margin-top: 90px;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
   }
 
   .constitution-card {
-    padding: 0.5rem;
+    padding: clamp(0.2rem, 1vw, 0.5rem);
   }
 
   .constitution-list li {
-    font-size: 0.8rem;
+    font-size: clamp(0.6rem, 1vw, 0.8rem);
   }
 
   .btn-outline-gold {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.7rem;
+    padding: clamp(0.08rem, 0.6vw, 0.25rem) clamp(0.15rem, 0.8vw, 0.5rem);
+    font-size: clamp(0.5rem, 0.9vw, 0.7rem);
+  }
+
+  /* Book adjustments */
+  .book-stage {
+    height: clamp(35vh, 70vh, 75vh);
+    padding: clamp(0.2rem, 0.8vw, 0.5rem);
+  }
+
+  #pages-holder {
+    max-width: min(700px, 82vw);
   }
 }
-
 
 /* Leader cards grid & spacing - adjustments for many cards */
 #leaders-section {
