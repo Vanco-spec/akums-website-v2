@@ -20,7 +20,8 @@ export default defineConfig({
         aboutus: '/about_us.html',
         leaders: '/leaders.html',
         scorp: '/scorp.html',
-        constitution: '/constitution.html'
+        constitution: '/constitution.html',
+        constitutionpages: '/constitution-pages'
       },
     },
   },

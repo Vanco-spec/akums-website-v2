@@ -21,6 +21,7 @@
     { "src": "/about_us", "dest": "/about_us.html" },
     { "src": "/admin-dashboard", "dest": "/admin-dashboard.html" },
     { "src": "/constitution", "dest": "/constitution.html" },
+    { "src": "/constitution-pages", "dest": "/constitution-pages.html" },
     { "src": "/contact", "dest": "/contact.html" },
     { "src": "/leaders", "dest": "/leaders.html" },
     { "src": "/login", "dest": "/login.html" },
